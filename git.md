@@ -48,9 +48,9 @@ hello.txt
 提交为空，但是存在尚未跟踪的文件（使用 "git add" 建立跟踪）
 】
 
-#### 添加对文件的跟踪，并提交记录。
+#### 准备提交、提交。
 注意：所有的版本控制器只能跟踪文本文件改动，包括git。但对于二进制文件，比如word，无法跟踪文件的变化。
-第一步：在仓库下`git add xx.txt`，添加跟踪
+第一步：在仓库下`git add xx.txt`，做提交准备
 【
 chao@ubuntu:~/test$ git add hello.txt
 chao@ubuntu:~/test$ git status
@@ -64,7 +64,7 @@ chao@ubuntu:~/test$ git status
 新文件: hello.txt
 】
 第二步：提交变更记录`git commit`
->
+【
 chao@ubuntu:~/test$ git commit -m "add file'hello.txt'"  
 [master （根提交） 0a47505] add file'hello.txt'  
 Committer: 超 <chao@ubuntu.ubuntu-domain>  
@@ -80,14 +80,14 @@ git commit --amend --reset-author
   
 1 file changed, 1 insertion(+)  
 create mode 100644 hello.txt
->
+】
 `git commit`后面的选项`-m`用来对这次提交的更改进行说明，这个说明会被记录下来。
 
 >可以连续`add`几次，然后用一条`commit`提交
 >也可以使用通配符跟踪某一类型的所有文件`add *.txt`
 
 #### 查看具体的修改信息
-
+`git diff`
 
 #### 取消跟踪记录
 
@@ -107,7 +107,8 @@ remote add和push的区别？是否remote add是可以添加指定文件，而pu
 
 #### Q&A
 使用git add和直接新建有什么区别？
->两个不同的概念，git add只是在版本控制中添加对已有文件的索引，并不是新建一个文件并跟踪
+>两个不同的概念，git add只是对已经有的文件进行预提交，准备记录变化，并不是新建一个文件并记录
+
 
 
 
