@@ -69,6 +69,7 @@ git，是一个分布式的版本控制器
 
 #### 暂存、提交
 注意：所有的版本控制器只能跟踪文本文件改动，包括git。对于二进制文件，比如word，无法跟踪文件的变化。
+
 第一步：在仓库下`git add xx.txt`，对仓库中准备提交的变更进行暂存，就是放入暂存区
 
 >chao@ubuntu:~/test$ git add hello.txt
@@ -123,7 +124,7 @@ git，是一个分布式的版本控制器
 
 >	删除:         hi.txt
 
-修改尚未加入提交（使用 "git add" 和/或 "git commit -a"）
+>修改尚未加入提交（使用 "git add" 和/或 "git commit -a"）
 
 使用 -a 选项，不`add`，强行暂存并提交修改
 
@@ -189,7 +190,7 @@ git，是一个分布式的版本控制器
 #### 版本回退
 还真的能回退！太强大！所有版本的内容都被保存下来了。
 
-`git log`查看库中所有`提交的历史`，从最近一个版本变动开始显示
+- `git log`查看库中所有`提交的历史`，从最近一个版本变动开始显示
 
 >chao@ubuntu:~/test$ git log
 >commit 906b1d7ed397f80d310adf9bd44f3331d4501f9e
@@ -269,17 +270,7 @@ git，是一个分布式的版本控制器
 
 >0a4750519d2f4966fa4016590da82ee9c26f67db add file'hello.txt'
 
-两种回退方法：
-
-需要确定想退回到哪个版本。  
-在Git中，用`HEAD`表示当前版本，上一个版本是`HEAD^`，上上一个版本就是`HEAD^^`  
-`git reset --hard HEAD^`
-
-也可以用`commit id`的前7位确定版本`  
-`git reset --hard 3628164`
-
-自由穿梭……  
-`git reflog`用来记录你的`命令历史`，前面的一串数字就是`commit id`的前七位
+- `git reflog`用来记录你的`命令历史`，前面的一串数字就是`commit id`的前七位
 
 >chao@ubuntu:~/test$ git reflog
 
@@ -300,6 +291,16 @@ git，是一个分布式的版本控制器
 >fe5d031 HEAD@{7}: commit: add file'hellohello.txt'
 
 >0a47505 HEAD@{8}: commit (initial): add file'hello.txt'
+
+- 两种回退方法：
+
+需要确定想退回到哪个版本。  
+1. 在Git中，用`HEAD`表示当前版本，上一个版本是`HEAD^`，上上一个版本就是`HEAD^^`  
+`git reset --hard HEAD^`
+
+2. 也可以用`commit id`的前7位确定版本`
+`git reset --hard 3628164`
+
 
 查看当前hello.txt的内容
 
