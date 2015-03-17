@@ -8,7 +8,7 @@ chao@ubuntu:~$ git --version
 git version 1.9.1
 如果没有，输入命令`sudo apt-get install git`就可以进行安装
 
-#### 仓库（repository）
+#### 初始化，建立仓库（repository）
 仓库就是一个被git控制的目录，git可以记录目录下所有文件的修改、删除，甚至可以还原？？
 仓库可以通过在一个空目录下，通过命令“git init”对目录进行初始化，然后git会在这个目录下新建一个隐藏的目录`.git`
 【
@@ -87,7 +87,44 @@ create mode 100644 hello.txt
 >也可以使用通配符跟踪某一类型的所有文件`add *.txt`
 
 #### 查看具体的修改信息
-`git diff`
+修改仓库中的文件"hello.txt"
+hello!
+world!
+`
+hello!world!
+world!
+hello!
+
+`git diff`查看被修改过，但还没有被`add`的文件里，改动的内容
+chao@ubuntu:~/test$ git diff hello.txt
+diff --git a/hello.txt b/hello.txt
+index ce96208..37750cd 100644
+--- a/hello.txt
++++ b/hello.txt
+@@ -1,2 +1,3 @@
+-hello!
++hello!world!
+ world!
++hello!
+
+chao@ubuntu:~/test$ git commit -m "modify hello.txt"
+[master 7837360] modify hello.txt
+ Committer: 超 <chao@ubuntu.ubuntu-domain>
+您的姓名和邮件地址基于登录名和主机名进行了自动设置。请检查它们正确
+与否。您可以通过下面的命令对其进行明确地设置以免再出现本提示信息：
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+设置完毕后，您可以用下面的命令来修正本次提交所使用的用户身份：
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+chao@ubuntu:~/test$ git status
+位于分支 master
+无文件要提交，干净的工作区
+
 
 #### 取消跟踪记录
 
@@ -97,9 +134,27 @@ chao@ubuntu:~/test$ git status
 
 #### 查看版本变动信息
 
-#### 操作用户信息的设置
+#### 配置操作用户信息的设置
+【
+chao@ubuntu:~/test$ git commit -m "modify hello.txt"
+[master 7837360] modify hello.txt
+ Committer: 超 <chao@ubuntu.ubuntu-domain>
+您的姓名和邮件地址基于登录名和主机名进行了自动设置。请检查它们正确
+与否。您可以通过下面的命令对其进行明确地设置以免再出现本提示信息：
 
-remote add和push的区别？是否remote add是可以添加指定文件，而push是完整更新替换？
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+设置完毕后，您可以用下面的命令来修正本次提交所使用的用户身份：
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+】
+
+chao@ubuntu:~/test$ git config --global user.name "chao"
+chao@ubuntu:~/test$ git config --global user.email chao@ubuntu.com
+
 
 #### 帮助：
 `git --help`查看常用命令
@@ -109,8 +164,6 @@ remote add和push的区别？是否remote add是可以添加指定文件，而pu
 使用git add和直接新建有什么区别？
 >两个不同的概念，git add只是对已经有的文件进行预提交，准备记录变化，并不是新建一个文件并记录
 
+>remote add和push的区别？是否remote add是可以添加指定文件，而push是完整更新替换？
 
-
-
-
-
+>git origin master是可变参数还是特定规定的名称？
