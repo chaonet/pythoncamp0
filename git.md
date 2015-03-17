@@ -138,6 +138,122 @@ chao@ubuntu:~/test$ git status
 无文件要提交，干净的工作区
 】
 
+#### 版本回退
+还真的能回退！太强大！所有版本的内容都被保存下来了。
+`git log`查看库中所有提交的历史，从最近一个版本变动开始显示
+chao@ubuntu:~/test$ git log
+commit 906b1d7ed397f80d310adf9bd44f3331d4501f9e
+Author: chao <chao@ubuntu.com>
+Date:   Tue Mar 17 21:06:22 2015 +0800
+
+    modify hello.txt
+
+commit 8cdb9e4a1fffbe7a2ad3a99a3ab9a6a6af4bf17b
+Author: chao <chao@ubuntu.com>
+Date:   Tue Mar 17 20:54:13 2015 +0800
+
+    add file'hello.txt'
+
+commit 6567dba9e0f55d9d335273c94b12dc433e1ad81b
+Author: chao <chao@ubuntu.com>
+Date:   Tue Mar 17 20:46:16 2015 +0800
+
+    delete all files
+
+commit 2f9b22c60b068e2904cbfddb1d39686c66aae5a4
+Author: chao <chao@ubuntu.com>
+Date:   Tue Mar 17 20:31:56 2015 +0800
+
+    modify hi.txt
+
+commit b6d9b3b345ff891e42d31b8bffd32986a69294ed
+Author: chao <chao@ubuntu.com>
+Date:   Tue Mar 17 20:22:29 2015 +0800
+
+    add file'hi.txt'
+
+commit 7837360f48214cf2dc494627880bdd0c3a061305
+Author: 超 <chao@ubuntu.ubuntu-domain>
+Date:   Tue Mar 17 10:35:43 2015 +0800
+
+    modify hello.txt
+
+commit 9b21e1b0a1451124fb6d271b0ee0282f25b4b57d
+Author: 超 <chao@ubuntu.ubuntu-domain>
+Date:   Tue Mar 17 10:12:31 2015 +0800
+
+    add world!
+
+commit fe5d031a42594c58868372b4459989365cdf4fc8
+Author: 超 <chao@ubuntu.ubuntu-domain>
+Date:   Mon Mar 16 21:39:43 2015 +0800
+
+    add file'hellohello.txt'
+
+commit 0a4750519d2f4966fa4016590da82ee9c26f67db
+Author: 超 <chao@ubuntu.ubuntu-domain>
+Date:   Mon Mar 16 21:09:53 2015 +0800
+
+    add file'hello.txt'
+(END)
+
+可以查看简略信息
+chao@ubuntu:~/test$ git log --pretty=oneline
+906b1d7ed397f80d310adf9bd44f3331d4501f9e modify hello.txt
+8cdb9e4a1fffbe7a2ad3a99a3ab9a6a6af4bf17b add file'hello.txt'
+6567dba9e0f55d9d335273c94b12dc433e1ad81b delete all files
+2f9b22c60b068e2904cbfddb1d39686c66aae5a4 modify hi.txt
+b6d9b3b345ff891e42d31b8bffd32986a69294ed add file'hi.txt'
+7837360f48214cf2dc494627880bdd0c3a061305 modify hello.txt
+9b21e1b0a1451124fb6d271b0ee0282f25b4b57d add world!
+fe5d031a42594c58868372b4459989365cdf4fc8 add file'hellohello.txt'
+0a4750519d2f4966fa4016590da82ee9c26f67db add file'hello.txt'
+
+两种回退方法：
+需要确定想退回到哪个版本。
+在Git中，用`HEAD`表示当前版本，上一个版本是`HEAD^`，上上一个版本就是`HEAD^^`
+`git reset --hard HEAD^`
+
+也可以用`commit id`的前7位确定版本`
+`git reset --hard 3628164`
+
+另外，Git提供了一个命令`git reflog`用来记录你的每一次命令，前面的一串数字就是`commit id`的前七位
+chao@ubuntu:~/test$ git reflog
+906b1d7 HEAD@{0}: commit: modify hello.txt
+8cdb9e4 HEAD@{1}: commit: add file'hello.txt'
+6567dba HEAD@{2}: commit: delete all files
+2f9b22c HEAD@{3}: commit: modify hi.txt
+b6d9b3b HEAD@{4}: commit: add file'hi.txt'
+7837360 HEAD@{5}: commit: modify hello.txt
+9b21e1b HEAD@{6}: commit: add world!
+fe5d031 HEAD@{7}: commit: add file'hellohello.txt'
+0a47505 HEAD@{8}: commit (initial): add file'hello.txt'
+
+查看当前hello.txt的内容
+chao@ubuntu:~/test$ cat hello.txt
+hi!
+boys and girls.
+
+退回到前一个版本
+chao@ubuntu:~/test$ git reset --hard HEAD^
+HEAD 现在位于 8cdb9e4 add file'hello.txt'
+chao@ubuntu:~/test$ cat hello.txt
+hello!
+
+退回到文件都被删除版本
+chao@ubuntu:~/test$ git reset --hard 6567dba
+HEAD 现在位于 6567dba delete all files
+chao@ubuntu:~/test$ ls
+
+还原到最后的版本
+chao@ubuntu:~/test$ git reset --hard 906b1d7
+HEAD 现在位于 906b1d7 modify hello.txt
+chao@ubuntu:~/test$ ls
+hello.txt
+chao@ubuntu:~/test$ cat hello.txt
+hi!
+boys and girls.
+
 #### 取消跟踪记录
 
 #### 分支
