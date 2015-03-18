@@ -1,4 +1,4 @@
-新建一个资源
+### 新建一个资源
 
 
 拷贝
@@ -23,6 +23,7 @@ closes #xxx
 closed #xxx
 ```
 
-提交pull请求
+### 提交pull请求
 
 [GitHub秘籍，为你解读Git与Github酷而少知的功能] (http://www.xuanfengge.com/github-cheats.html)
+[使用SSH密钥连接Github](http://www.xuanfengge.com/using-ssh-key-link-github-photo-tour.html)
