@@ -353,6 +353,16 @@ git，是一个分布式的版本控制器
 
 >boys and girls.
 
+
+#### 分支
+新建分支可以理解为创立一个做子项目的平行世界，分支之间可以彼此独立存在，进行暂存、提交，当子项目完成，进行分支合并，子项目就成了主项目的一部分。类似一个复杂设备，分成几个部分，独立进行安装，最后组合成一个整体。
+chao@ubuntu:~/test$ git status
+位于分支 master
+
+git merge，合并分支
+
+git checkout，新增分支
+
 #### 远程仓库
 可以使用一台电脑作为 git 服务器，专门用来存放仓库，谁需要用，就从仓库克隆到自己的电脑进行使用，github 就是这样一个免费的仓库托管服务器。
 
@@ -366,6 +376,8 @@ git，是一个分布式的版本控制器
 那么，`HTTPS, SSH, or Subversion`这些方式有有什么区别呢？
 
 git 支持多个协议进行文件传输，为了确认你有权限对仓库进行修改操作，需要验证身份。`HTTPS`方式比较麻烦，每次传输文件（克隆、提交、拉取），都需要输入用户名和密码。而`SSH`方式，可以在第一次配置完成后，以后都不需要再输入用户名及密码。
+
+使用clone命令后，本地的仓库中./.git/config文件的`[remote "origin"]`下会自动生成被克隆的仓库的URL。
 
 ##### 将本地仓库推送到 github 进行托管
 在 github 新建一个空仓库`exam`，复制clone的URL
@@ -397,27 +409,39 @@ git 支持多个协议进行文件传输，为了确认你有权限对仓库进�
         url = https://github.com/chaonet/exam.git
         fetch = +refs/heads/*:refs/remotes/ori/*
 
-将本地库`test` 推送到github 的`exam`
-
-`git push -u ori master`，使用`-u`选项，设置git push 时的默认
-
-
-，将内容复制到本地，并将修改后的内容保存到 github 呢
-首先，要将本地的指定 git 仓库和 github 的特定仓库建立关联，这样以后执行的的推送、拉取命令，才知道是对哪些库进行的操作
-
-git remote add
-
-git pull
-
-git push -u origin master
-
-
-
-#### 分支
-新建分支可以理解为创立一个做子项目的平行世界，分支之间可以彼此独立存在，进行暂存、提交，当子项目完成，进行分支合并，子项目就成了主项目的一部分。类似一个复杂设备，分成几个部分，独立进行安装，最后组合成一个整体。
 chao@ubuntu:~/test$ git status
 位于分支 master
+无文件要提交，干净的工作区
 
+将本地库`test` 的`master`分支推送到github 的`exam`
+
+`git push -u ori master`，推送本地仓库的`master`分支到`ori`的同名分支，如果远程没有这个分支，会自动创建。
+
+第一次 push 使用`-u`选项，是将本地的当前分支与远程同名分支关联，以后再推送时，只需要输入命令`git push`就可以完成。
+
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[remote "ori"]
+        url = https://github.com/chaonet/exam.git
+        fetch = +refs/heads/*:refs/remotes/ori/*
+[branch "master"]
+        remote = ori
+        merge = refs/heads/master
+
+
+git push -u origin +master，指定在push前，先强制更新远端的分支
+
+
+git pull，取回远程的指定分支，并与本地分支合并
+
+git fetch，取回远程主机某个分支的更新
+
+git merge，合并分支
+
+分支顺序的写法是<来源地>:<目的地>，所以git pull是<远程分支>:<本地分支>，而git push是<本地分支>:<远程分支>
 
 #### 设置用于记录的用户信息
 
@@ -515,3 +539,15 @@ warning: push.default 尚未设置，它的默认值在 Git 2.0 从 'matching'
 6. 分支应该如何使用比较好？
 
 7. 为什么我从本地推送到github没有说要用ssh，好像用的https，SSH不是必须的吧？难道是我没有推成功？
+
+chao@ubuntu:~/test$ git push -u ori master 
+Username for 'https://github.com': xuchaocisco@gmail.com
+Password for 'https://xuchaocisco@gmail.com@github.com': 
+To https://github.com/chaonet/exam.git
+ ! [rejected]        master -> master (fetch first)
+error: 无法推送一些引用到 'https://github.com/chaonet/exam.git'
+提示：更新被拒绝，因为远程版本库包含您本地尚不存在的提交。这通常是因为另外
+提示：一个版本库已向该引用进行了推送。再次推送前，您可能需要先整合远程变更
+提示：（如 'git pull ...'）。
+提示：详见 'git push --help' 中的 'Note about fast-forwards' 小节。
+
