@@ -1,8 +1,9 @@
+#### git是什么，为什么要git
 git，是一个分布式的版本控制器
 
-分布式，就是每一个参与编辑的终端都有一个完整的本地拷贝，可以直接进行编辑，而不一定要联网
+分布式，就是每一个参与编辑的终端都有一个完整的本地拷贝，可以直接进行编辑，而不一定要连上一个特定的服务器。这样可以方便多人协同做项目，而且有多处备份
 
-版本控制，所做的每一次改动，git都会有一个日志记录下是谁在什么时候做了什么改动，并且每个改动都会做备份，以便需要时候回退
+版本控制，所做的每一次改动，git都会有一个日志记录下是谁在什么时候做了什么改动，并且每个改动都会自动做备份，以便需要时候回退
 
 #### 安装git
 通过在终端输入“git”，可以知道系统有没有安装git
@@ -200,6 +201,7 @@ git，是一个分布式的版本控制器
 - `git log`查看库中所有`提交的历史`，从最近一个版本变动开始显示
 
 >chao@ubuntu:~/test$ git log
+
 >commit 906b1d7ed397f80d310adf9bd44f3331d4501f9e
 >Author: chao <chao@ubuntu.com>
 >Date:   Tue Mar 17 21:06:22 2015 +0800
@@ -352,6 +354,47 @@ git，是一个分布式的版本控制器
 >boys and girls.
 
 #### 远程仓库
+可以使用一台电脑作为 git 服务器，专门用来存放仓库，谁需要用，就从仓库克隆到自己的电脑进行使用，github 就是这样一个免费的仓库托管服务器。
+
+那么，怎么使用远程仓库？
+
+##### 从自己的 github 中克隆已有的仓库到本地
+进入自己的 github 中想要克隆的仓库，在右边有`clone URL`，并且有几种 clone 方式可以选择：`You can clone with HTTPS, SSH, or Subversion. `，点击URL右边的复制按钮，复制URL
+
+在本地仓库目录下，敲入命令`git clone <URL>`，就可以将这个仓库从 github 克隆到本地
+
+那么，`HTTPS, SSH, or Subversion`这些方式有有什么区别呢？
+
+git 支持多个协议进行文件传输，为了确认你有权限对仓库进行修改操作，需要验证身份。`HTTPS`方式比较麻烦，每次传输文件（克隆、提交、拉取），都需要输入用户名和密码。而`SSH`方式，可以在第一次配置完成后，以后都不需要再输入用户名及密码。
+
+##### 将本地仓库推送到 github 进行托管
+在 github 新建一个空仓库`exam`，复制clone的URL
+将本地仓库`test`推送到 github 的`exam`
+
+本地仓库`test`下git的配置文件
+
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+
+用git remote 将 `exam` 的URL与一个自定义的主机名相关联，并将关联写配置文件
+
+
+
+git remote add [-t <分支>] [-m <master>] [-f] [--tags|--no-tags] [--mirror=<fetch|push>] <名称> <url>
+
+
+，将内容复制到本地，并将修改后的内容保存到 github 呢
+首先，要将本地的指定 git 仓库和 github 的特定仓库建立关联，这样以后执行的的推送、拉取命令，才知道是对哪些库进行的操作
+
+git remote add
+
+git pull
+
+git push -u origin master
+
 
 
 #### 分支
@@ -359,9 +402,6 @@ git，是一个分布式的版本控制器
 chao@ubuntu:~/test$ git status
 位于分支 master
 
-`git push`
-
-`git pull`
 
 #### 设置用于记录的用户信息
 
@@ -412,6 +452,8 @@ chao@ubuntu:~/test$ git status
 工作区和暂存区分别是做什么用的？
 
 2. remote add和push的区别？是否remote add是可以添加指定文件，而push是完整更新替换？
+
+git push -u origin master简化命令，怎么简化的？
 
 3. git中origin master是可变参数还是规定的名称？
 
