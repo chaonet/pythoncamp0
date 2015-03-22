@@ -5,6 +5,9 @@
 
 添加`.md`的文件
 
+### 新建文件夹
+创建文件时，输文件夹名称后，键入`/`，会自动在当前目录下添加新文件夹，如果想取消，按`backspace`
+
 ### 引用issue
 同一仓库的issue
 commit message里面使用 #加上issue号 ，比如`#8`, github会自动关联`issue 8`跟这个commit. 
@@ -24,6 +27,8 @@ closed #xxx
 ```
 
 ### 提交pull请求
+
+
 
 [GitHub秘籍，为你解读Git与Github酷而少知的功能] (http://www.xuanfengge.com/github-cheats.html)
 [使用SSH密钥连接Github](http://www.xuanfengge.com/using-ssh-key-link-github-photo-tour.html)
