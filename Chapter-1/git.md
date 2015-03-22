@@ -369,7 +369,8 @@ git 支持多个协议进行文件传输，为了确认你有权限对仓库进�
 
 ##### 将本地仓库推送到 github 进行托管
 在 github 新建一个空仓库`exam`，复制clone的URL
-将本地仓库`test`推送到 github 的`exam`
+
+接下要将本地仓库`test`推送到 github 的`exam`
 
 本地仓库`test`下git的配置文件
 
@@ -379,11 +380,26 @@ git 支持多个协议进行文件传输，为了确认你有权限对仓库进�
         bare = false
         logallrefupdates = true
 
-用git remote 将 `exam` 的URL与一个自定义的主机名相关联，并将关联写配置文件
+用`git remote` 将远程 github的仓库 `exam` 的URL与一个自定义的名称相关联，并将关联写入本地仓库的配置文件。
+这里有一个特点，一个名称可以对应几个URL，所以可以做到多推。
 
+`git remote add ori https://github.com/chaonet/exam.git`，名称可以自定义，通常为了方便理解，命名为`origin`，我这里使用的是`ori`
 
+`git remote add [-t <分支>] [-m <master>] [-f] [--tags|--no-tags] [--mirror=<fetch|push>] <名称> <url>`
 
-git remote add [-t <分支>] [-m <master>] [-f] [--tags|--no-tags] [--mirror=<fetch|push>] <名称> <url>
+效果：
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[remote "ori"]
+        url = https://github.com/chaonet/exam.git
+        fetch = +refs/heads/*:refs/remotes/ori/*
+
+将本地库`test` 推送到github 的`exam`
+
+`git push -u ori master`，使用`-u`选项，设置git push 时的默认
 
 
 ，将内容复制到本地，并将修改后的内容保存到 github 呢
@@ -445,17 +461,52 @@ chao@ubuntu:~/test$ git status
 `git help <命令>`查看指定的命令
 
 #### Q&A
-1. 使用git add和直接新建有什么区别？
+- 使用git add和直接新建有什么区别？
 
 >两个不同的概念，git add只是将文件放到暂存区，准备提交，并不是新建一个文件并记录
 
 工作区和暂存区分别是做什么用的？
 
-2. remote add和push的区别？是否remote add是可以添加指定文件，而push是完整更新替换？
+- remote add和push的区别？是否remote add是可以添加指定文件，而push是完整更新替换？
 
-git push -u origin master简化命令，怎么简化的？
+chao@ubuntu:~/test$ git remote ?
+error: 未知子命令：?
+用法：git remote [-v | --verbose]
+   或：git remote add [-t <分支>] [-m <master>] [-f] [--tags|--no-tags] [--mirror=<fetch|push>] <名称> <url>
+   或：git remote rename <旧名称> <新名称>
+   或：git remote remove <名称>
+   或：git remote set-head <名称> (-a | --auto | -d | --delete |<分支>)
+   或：git remote [-v | --verbose] show [-n] <名称>
+   或：git remote prune [-n | --dry-run] <名称>
+   或：git remote [-v | --verbose] update [-p | --prune] [(<组> | <远程>)...]
+   或：git remote set-branches [--add] <名称> <分支>...
+   或：git remote set-url [--push] <名称> <新的地址> [<旧的地址>]
+   或：git remote set-url --add <名称> <新的地址>
+   或：git remote set-url --delete <名称> <地址>
 
-3. git中origin master是可变参数还是规定的名称？
+    -v, --verbose         冗长输出；必须置于子命令之前
+
+
+- git push -u origin master简化命令，怎么简化的？
+
+chao@ubuntu:~/test$ git push ?
+warning: push.default 尚未设置，它的默认值在 Git 2.0 从 'matching'
+变更为 'simple'。若要不再显示本信息并保持传统习惯，进行如下设置：
+
+  git config --global push.default matching
+
+若要不再显示本信息并从现在开始采用新的使用习惯，设置：
+
+  git config --global push.default simple
+
+当 push.default 设置为 'matching' 后，git 将推送和远程同名的所有
+本地分支。
+
+从 Git 2.0 开始，Git 缺省采用更为保守的 'simple' 模式，只推送当前
+分支到远程关联的同名分支，即 'git push' 推送当前分支。
+
+
+- git中origin master是可变名称参数还是固定名称的参数？
 
 4. 分支的作用是什么？如果是备份，不是已经有版本回退功能了么？
 
