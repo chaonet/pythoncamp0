@@ -171,7 +171,7 @@ git，是一个分布式的版本控制器
 >+hi!
 >+boys and girls.
 
-知道做了什么修改以后，可以选择放弃当前工作区的改动，还是放到暂存区准备提交
+知道做了什么修改以后，可以选择放到暂存区准备提交，还是放弃当前工作区的改动
 
 >chao@ubuntu:~/test$ git status
 >位于分支 master
@@ -197,6 +197,7 @@ git，是一个分布式的版本控制器
 
 #### 版本回退
 还真的能回退！太强大！所有版本的内容都被保存下来了。
+能够进行版本回退是因为，git 将每次提交的版本用一个时间线连接起来，并设了一个指针`HEAD`指向时间线，表示当前可以看到的版本。所以版本的回退其实就是对指针`HEAD`的移动。
 
 - `git log`查看库中所有`提交的历史`，从最近一个版本变动开始显示
 
@@ -355,20 +356,92 @@ git，是一个分布式的版本控制器
 
 
 #### 分支
-新建分支可以理解为创立一个做子项目的平行世界，分支之间可以彼此独立存在，进行暂存、提交，当子项目完成，进行分支合并，子项目就成了主项目的一部分。类似一个复杂设备，分成几个部分，独立进行安装，最后组合成一个整体。
-chao@ubuntu:~/test$ git status
-位于分支 master
+一个仓库建立以后，默认只有一个主分支，叫`master`。
 
-git merge，合并分支
+`git branch`查看分支
 
-git checkout，新增分支
+chao@ubuntu:~/test$ git branch
+* master
+
+新建分支可以理解为创立一个当前分支的平行世界,，用于进行后面的其他内容的尝试编写，分支之间可以彼此独立存在，通常不会再对主分支进行版本推进。如果新分支编写失败，不会影响主分支，而当新分支中的内容完后，进行分支合并，主分支就有了版本稳定的进展。
+
+其实git中的`HEAD`指针并不是直接指向时间线上的节点，而是指向分支，比如默认是`HEAD`指向`master`（选择分支），然后`master`再指向时间线上的时间节点（选择这个分支上的版本）。
+
+上一节的版本回退只是在主分支移动`master`这个指针。当创建新分支，就是在并在新分支通过提交建立了时间线上的新节点后，`HEAD`可以切换指向新的分支。
+
+`git branch <name>`创建分支
+
+chao@ubuntu:~/test$ git branch slave
+chao@ubuntu:~/test$ git branch
+* master
+  slave
+
+`git checkout <name>`切换分支
+
+chao@ubuntu:~/test$ git checkout slave 
+M	hello.txt
+切换到分支 'slave'
+
+`git checkout -b <name>`创建并切换分支
+
+chao@ubuntu:~/test$ git branch 
+* master
+chao@ubuntu:~/test$ git checkout -b slave
+M	hello.txt
+切换到一个新分支 'slave'
+chao@ubuntu:~/test$ git branch 
+  master
+* slave
+
+`git merge <name>`合并指定分支到当前分支
+
+当前`master`中`hello.txt`的内容
+hi!!
+boys and girls.
+
+在分支`slave`对`hello.txt`进行修改
+hi!!
+boys and girls.
+nice!
+
+将`slave`合并到`master`
+chao@ubuntu:~/test$ git checkout master 
+M	hello.txt
+切换到分支 'master'
+您的分支与上游分支 'ori/master' 一致。
+
+chao@ubuntu:~/test$ git merge slave 
+Already up-to-date.
+
+chao@ubuntu:~/test$ git branch 
+* master
+  slave
+
+`slave`的内容已经合并到`master`
+chao@ubuntu:~/test$ cat hello.txt 
+hi!!
+boys and girls.
+nice!
+
+`git branch -d <name>`删除合并后的指定分支
+
+chao@ubuntu:~/test$ git branch -d slave
+已删除分支 slave（曾为 906b1d7）。
+
+`git branch -D <name>`删除一个还未被合并的指分支
+
+
+chao@ubuntu:~/test$ git checkout master 
+M	hello.txt
+切换到分支 'master'
+您的分支与上游分支 'ori/master' 一致。
 
 #### 远程仓库
 可以使用一台电脑作为 git 服务器，专门用来存放仓库，谁需要用，就从仓库克隆到自己的电脑进行使用，github 就是这样一个免费的仓库托管服务器。
 
 那么，怎么使用远程仓库？
 
-##### 从自己的 github 中克隆已有的仓库到本地
+##### 从 github 中克隆已有的仓库到本地
 进入自己的 github 中想要克隆的仓库，在右边有`clone URL`，并且有几种 clone 方式可以选择：`You can clone with HTTPS, SSH, or Subversion. `，点击URL右边的复制按钮，复制URL
 
 在本地仓库目录下，敲入命令`git clone <URL>`，就可以将这个仓库从 github 克隆到本地
@@ -393,11 +466,11 @@ git 支持多个协议进行文件传输，为了确认你有权限对仓库进�
         logallrefupdates = true
 
 用`git remote` 将远程 github的仓库 `exam` 的URL与一个自定义的名称相关联，并将关联写入本地仓库的配置文件。
-这里有一个特点，一个名称可以对应几个URL，所以可以做到多推。
+这里有一个点，一个名称可以对应几个URL，所以可以做到多推。
 
 `git remote add ori https://github.com/chaonet/exam.git`，名称可以自定义，通常为了方便理解，命名为`origin`，我这里使用的是`ori`
 
-`git remote add [-t <分支>] [-m <master>] [-f] [--tags|--no-tags] [--mirror=<fetch|push>] <名称> <url>`
+`git remote add <名称> <url>`
 
 效果：
 [core]
@@ -417,7 +490,7 @@ chao@ubuntu:~/test$ git status
 
 `git push -u ori master`，推送本地仓库的`master`分支到`ori`的同名分支，如果远程没有这个分支，会自动创建。
 
-第一次 push 使用`-u`选项，是将本地的当前分支与远程同名分支关联，以后再推送时，只需要输入命令`git push`就可以完成。
+第一次 push 使用`-u`选项，是将本地的`master`分支与远程同名分支关联，以后再推送时，只需要输入命令`git push`就可以完成。下面是./.git/config 文件记录下的内容。
 
 [core]
         repositoryformatversion = 0
@@ -434,12 +507,12 @@ chao@ubuntu:~/test$ git status
 
 git push -u origin +master，指定在push前，先强制更新远端的分支
 
-
-git pull，取回远程的指定分支，并与本地分支合并
-
 git fetch，取回远程主机某个分支的更新
 
 git merge，合并分支
+
+git pull，取回远程的指定分支，并与本地分支合并。是同时进行了`git fetch`和`git merge`两步
+
 
 分支顺序的写法是<来源地>:<目的地>，所以git pull是<远程分支>:<本地分支>，而git push是<本地分支>:<远程分支>
 
