@@ -8,6 +8,6 @@
   * [github与gitbook同步](./Chapter-1/github and gitbook.md)
   * [Markdown](./Chapter-1/Markdown.md)
 * [Python]()
-  * [Guess the number](./Chapter-2/Guess_the_number.mdnull)
+  * [Guess the number](./Chapter-2/Guess_the_number.md)
 * [结尾](./source/end.md)
 
