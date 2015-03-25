@@ -7,6 +7,6 @@
   * [gitbook](./Chapter-1/gitbook.md)
   * [github与gitbook同步](./Chapter-1/github and gitbook.md)
   * [Markdown](./Chapter-1/Markdown.md)
-* [part2](./source/part2/introduction)
-  * [part2.2](./source/part2/1.md)
+* [Python]()
+  * [Guess the number](./Chapter-2/Guess the number.md)
 * [结尾](./source/end.md)
