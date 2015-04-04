@@ -1,0 +1,541 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>可回放的点彩画板 | Python的学习记录</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.1">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../source/part1/Guess_the_number.html" />
+    
+    
+    <link rel="prev" href="../Chapter-0/Guess_the_number.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="Sat Apr 04 2015 13:36:48 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="begin.html">
+            
+                
+                    <a href="../begin.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        缘起
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" >
+            
+            <span><b>1.1.</b> 网易云课堂</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+            <span><b>1.2.</b> 注册Github</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Chapter-0/github_and_gitbook.html">
+            
+                
+                    <a href="../Chapter-0/github_and_gitbook.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        注册并使用了gitbook
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Chapter-0/git.html">
+            
+                
+                    <a href="../Chapter-0/git.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        git发布私人图书
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+            <span><b>1.5.</b> 熟悉 Python REPL</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+            <span><b>1.6.</b> 开光大会的心得总结</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Chapter-0/Markdown.html">
+            
+                
+                    <a href="../Chapter-0/Markdown.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Markdown 教程
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="Chapter-0/Mailling-List.html">
+            
+                
+                    <a href="../Chapter-0/Mailling-List.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        Mailling-List 教程
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="Chapter-0/github.html">
+            
+                
+                    <a href="../Chapter-0/github.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        Github 教程
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="Chapter-0/gitbook.html">
+            
+                
+                    <a href="../Chapter-0/gitbook.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        部署gitbook
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="Chapter-0/Guess_the_number.html">
+            
+                
+                    <a href="../Chapter-0/Guess_the_number.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.11.</b>
+                        
+                        IIPPy-part1:Guess_the_number
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> [进击 IIPPy-part2]</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1" data-path="Chapter-1/Drawing_board.html">
+            
+                
+                    <a href="../Chapter-1/Drawing_board.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        可回放的点彩画板
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> [source]</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="source/part1/Guess_the_number.html">
+            
+                
+                    <a href="../source/part1/Guess_the_number.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Guess_the_number
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="source/part2/Drawing_board_V1.0.html">
+            
+                
+                    <a href="../source/part2/Drawing_board_V1.0.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Drawing board V1.0
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="source/part2/Drawing_board_V2.0.html">
+            
+                
+                    <a href="../source/part2/Drawing_board_V2.0.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Drawing board V2.0
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="source/part2/Drawing_board_V3.0.html">
+            
+                
+                    <a href="../source/part2/Drawing_board_V3.0.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Drawing board V3.0
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="source/part2/Drawing_board_V4.0.html">
+            
+                
+                    <a href="../source/part2/Drawing_board_V4.0.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        Drawing board V4.0
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="end.html">
+            
+            <span><b>4.</b> 结尾</span>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Python的学习记录</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h5 id="%E5%94%AF%E4%B8%80%E4%BD%9C%E4%B8%9A">&#x552F;&#x4E00;&#x4F5C;&#x4E1A;:</h5>
+<ul>
+<li>&#x53EF;&#x56DE;&#x653E;&#x7684;&#x70B9;&#x5F69;&#x753B;&#x677F;</li>
+<li>&#x671F;&#x5F85;:<ul>
+<li>&#x4E09;&#x79CD;&#x5F62;&#x72B6;&#x753B;&#x7B14;&#x53EF;&#x9009;: &#x4E09;&#x89D2;/&#x65B9;&#x5F62;/&#x5706;&#x5F62;</li>
+<li>&#x989C;&#x8272;&#x53EF;&#x5B9A;&#x4E49;: &#x989C;&#x8272;&#x540D; &#x6216;&#x662F; RGB &#x58F0;&#x660E;</li>
+<li>&#x6BCF;&#x6B21; &#x9F20;&#x6807; &#x70B9;&#x51FB;&#x753B;&#x677F;&#x4EFB;&#x610F;&#x4E00;&#x5904;,&#x90FD;&#x7ED8;&#x5236;&#x4E00;&#x4E2A;&#x5F53;&#x524D;&#x753B;&#x7B14;&#x53EF;&#x7528;&#x5F69;&#x8272;&#x5F62;&#x72B6;</li>
+<li>&#x53EF;&#x8BB0;&#x5F55;1024&#x6B21;&#x70B9;&#x5F69;&#x7ED8;&#x5236;&#x884C;&#x4E3A;</li>
+<li>&#x53EF;&#x56DE;&#x653E;&#x6574;&#x4E2A;&#x8BB0;&#x5F55;&#x7684;&#x7ED8;&#x5236;&#x884C;&#x4E3A;</li>
+</ul>
+</li>
+<li>&#x8981;&#x6C42;:<ul>
+<li>&#x57FA;&#x7840;: &#x6709;&#x753B;&#x7B14;,&#x53EF;&#x70B9;&#x7ED8;</li>
+<li>&#x53EF;&#x7528;: &#x6709;&#x753B;&#x7B14;,&#x6709;&#x989C;&#x8272;,&#x53EF;&#x70B9;&#x7ED8;</li>
+<li>&#x5408;&#x683C;: &#x6709;&#x753B;&#x7B14;,&#x6709;&#x989C;&#x8272;,&#x53EF;&#x70B9;&#x7ED8;,&#x53EF;&#x56DE;&#x653E;</li>
+<li>&#x5929;&#x624D;: &#x6709;&#x753B;&#x7B14;,&#x6709;&#x989C;&#x8272;,&#x53EF;&#x70B9;&#x7ED8;,&#x53EF;&#x56DE;&#x653E;,&#x56DE;&#x653E;&#x901F;&#x5EA6;&#x53EF;&#x8C03;&#x8282;,&#x56DE;&#x653E;&#x53EF;&#x8F93;&#x51FA;&#x4E3A;&#x6587;&#x4EF6;</li>
+</ul>
+</li>
+</ul>
+<h5 id="%E8%AE%BE%E8%AE%A1%E6%AD%A5%E9%AA%A4%EF%BC%9A">&#x8BBE;&#x8BA1;&#x6B65;&#x9AA4;&#xFF1A;</h5>
+<p>&#x4ECE;&#x6700;&#x7B80;&#x5355;&#x7684;&#x5F00;&#x59CB;</p>
+<ol>
+<li>&#x521B;&#x5EFA;&#x6846;&#xFF0C;&#x753B;&#x5E03;&#x80CC;&#x666F;&#x8BBE;&#x7F6E;&#x4E3A;&#x767D;&#x8272;<code>set_canvas_background(&apos;White&apos;)</code></li>
+<li>&#x753B;&#x7B14;&#x5F62;&#x72B6;&#xFF0C;&#x8981;&#x6C42;&#x4E09;&#x79CD;&#x5F62;&#x72B6;&#xFF1A;&#x4E09;&#x89D2;/&#x65B9;&#x5F62;/&#x5706;&#x5F62;&#xFF0C;&#x5728;<code>Canvas</code>&#x4E2D;&#x53EA;&#x627E;&#x5230;<code>Draw Circle on Canvas</code>&#xFF0C;&#x5C31;&#x5148;&#x753B;&#x56ED;&#x5427;&#xFF0C;&#x7528;&#x6309;&#x94AE;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;</li>
+<li>&#x989C;&#x8272;&#xFF0C;&#x539F;&#x672C;&#x8BBE;&#x60F3;&#x7528;&#x4E0B;&#x62C9;&#x6846;&#x9009;&#x62E9;&#xFF0C;&#x4F46;&#x6CA1;&#x627E;&#x5230;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x4F9D;&#x7136;&#x7528;&#x6309;&#x94AE;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5B9A;&#x4E49;&#x51E0;&#x4E2A;&#x51FD;&#x6570;&#x8D4B;&#x503C;&#x989C;&#x8272;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6CE8;&#x518C;&#x6309;&#x94AE;&#x5E76;&#x8C03;&#x7528;&#x51FD;&#x6570;</li>
+<li>&#x70B9;&#x7ED8;&#xFF0C;&#x6CE8;&#x518C;&#x9F20;&#x6807;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;<code>set_mouseclick_handler(click)</code>&#xFF0C;&#x5B9A;&#x4E49;&#x51FD;&#x6570;<code>draw</code>&#x5C06;&#x5750;&#x6807;&#x8F6C;&#x6362;&#x6210;&#x5217;&#x8868;&#xFF0C;&#x5148;&#x753B;&#x51FA;&#x5706;&#x5F62;</li>
+<li>&#x989C;&#x8272;&#x6709;&#x4E86;&#xFF0C;&#x5F97;&#x60F3;&#x529E;&#x6CD5;&#x753B;&#x4E09;&#x89D2;&#x548C;&#x65B9;&#x5F62;&#xFF0C;&#x627E;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x5728;<code>Canvas</code>&#xFF0C;<code>Examples:</code>&#xFF0C;<code>Drawing Shapes</code>&#x91CC;&#x9762;&#x753B;&#x4E86;&#x51E0;&#x79CD;&#x56FE;&#x5F62;&#xFF0C;&#x6709;&#x9700;&#x8981;&#x7684;&#x4E09;&#x89D2;&#x548C;&#x65B9;&#x5F62;&#xFF0C;
+&#x4F9D;&#x846B;&#x82A6;&#x753B;&#x74E2;&#xFF0C;&#x7528;&#x83B7;&#x53D6;&#x7684;&#x9F20;&#x6807;&#x70B9;&#x51FB;&#x5750;&#x6807;&#x52A0;&#x51CF;25&#x50CF;&#x7D20;&#xFF0C;&#x786E;&#x5B9A;&#x4E86;&#x51E0;&#x4E2A;&#x9876;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x662F;&#x8FB9;&#x6846;&#x3001;&#x586B;&#x5145;&#x8272;&#x3002;
+&#x65B9;&#x5F62;&#x9047;&#x5230;&#x70B9;&#x95EE;&#x9898;&#xFF0C;&#x51E0;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x987A;&#x5E8F;&#x4E0D;&#x5BF9;&#xFF0C;&#x753B;&#x5F97;&#x5F88;&#x8BE1;&#x5F02;&#xFF0C;&#x4ED4;&#x7EC6;&#x7814;&#x7A76;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x4ECE;&#x5DE6;&#x4E0A;&#x89D2;&#x9006;&#x65F6;&#x9488;&#x753B;&#x4E86;&#x4E00;&#x5708;&#xFF0C;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x3002;
+&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x70B9;&#x7ED8;&#xFF0C;&#x4F46;&#x5386;&#x53F2;&#x4FE1;&#x606F;&#x6CA1;&#x6709;&#x88AB;&#x8BB0;&#x5F55;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x8981;&#x7528;&#x5230;&#x5217;&#x8868;&#x4FDD;&#x5B58;&#x6BCF;&#x6B21;&#x70B9;&#x51FB;&#x7684;&#x4FE1;&#x606F;&#x4E86;</li>
+</ol>
+<p><a href="http://www.codeskulptor.org/#user39_OfxcScRKeX_10.py" target="_blank">&#x94FE;&#x63A5;</a></p>
+<ol>
+<li>&#x5217;&#x8868;&#xFF0C;&#x8003;&#x8651;&#x5230;&#x9700;&#x8981;&#x4FDD;&#x5B58;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5217;&#x8868;&#x4E2D;&#x8981;&#x5305;&#x542B;&#xFF1A;&#x9F20;&#x6807;&#x70B9;&#x51FB;&#x7684;&#x5750;&#x6807;&#x3001;&#x989C;&#x8272;&#x3001;&#x7B14;&#x753B;&#x5F62;&#x72B6;&#xFF0C;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5217;&#x8868;<code>Pol_list</code>&#xFF0C;&#x5143;&#x7D20;&#x7528;&#x53D8;&#x91CF;&#x66FF;&#x4EE3;&#x3002;
+&#x5728;&#x9F20;&#x6807;&#x4E8B;&#x4EF6;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#x4E0B;&#xFF0C;&#x6BCF;&#x6B21;&#x7684;&#x70B9;&#x51FB;&#x5750;&#x6807;&#x8FFD;&#x52A0;&#x5230;<code>Pol_list</code>&#x8FDB;&#x884C;&#x4FDD;&#x5B58;&#xFF0C;&#x540C;&#x65F6;&#x4FDD;&#x5B58;&#x8FD9;&#x6B21;&#x70B9;&#x51FB;&#x7528;&#x5230;&#x7684;&#x989C;&#x8272;&#x548C;&#x5F62;&#x72B6;</li>
+</ol>
+<p><a href="http://www.codeskulptor.org/#user39_OfxcScRKeX_13.py" target="_blank">&#x94FE;&#x63A5;</a></p>
+<ol>
+<li>&#x56DE;&#x653E;&#xFF0C;&#x6700;&#x56F0;&#x96BE;&#x7684;&#x4E00;&#x6B65;&#xFF0C;&#x6700;&#x5F00;&#x59CB;&#x60F3;&#x5230;&#x7684;&#x662F;&#x4F53;&#x80B2;&#x6BD4;&#x8D5B;&#x4E2D;&#x7684;&#x5F55;&#x50CF;&#x56DE;&#x653E;&#x3002;
+&#x8003;&#x8651;&#x5728;&#x5217;&#x8868;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;<code>time</code>&#x505A;&#x7D2F;&#x52A0;&#xFF0C;&#x7136;&#x540E;&#x7528;<code>index</code>&#x627E;&#x51FA;&#x4F4D;&#x7F6E;
+&#x7528;<code>list[0:1024]</code>&#x622A;&#x53D6;&#x56FA;&#x5B9A;&#x8303;&#x56F4;&#x8D4B;&#x503C;&#x7ED9;&#x53E6;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x540D;&#xFF0C;&#x7136;&#x540E;&#x7528;<code>range(1024)</code>&#x548C;<code>for in</code>&#x4E4B;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x3002;
+&#x4F46;&#x60F3;&#x5230;&#x8FD9;&#x91CC;&#x5DF2;&#x7ECF;&#x51CC;&#x4E71;&#x4E86;&#xFF0C;&#x600E;&#x4E48;&#x7528;&#x4E00;&#x4E2A;<code>draw</code>&#x5B9E;&#x73B0;&#x3002;
+&#x540E;&#x6765;&#x60F3;&#x5230;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x60F3;&#x5F97;&#x592A;&#x591A;&#x4E86;&#xFF0C;&#x6216;&#x8BB8;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x56DE;&#x9000;&#x5462;&#xFF1F;&#x5148;&#x505A;&#x624B;&#x52A8;&#x56DE;&#x653E;&#x529F;&#x80FD;
+&#x7136;&#x540E;&#x8003;&#x8651;&#x600E;&#x4E48;&#x7528;&#x4E00;&#x4E2A;<code>draw</code>&#x663E;&#x793A;&#x6B63;&#x5E38;&#x7ED8;&#x753B;&#x548C;&#x56DE;&#x9000;&#x7684;&#x56FE;&#x50CF;&#xFF0C;&#x60F3;&#x5230;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;<code>be``end</code>&#x8868;&#x793A;&#x9700;&#x8981;&#x663E;&#x793A;&#x7684;&#x5217;&#x8868;&#x8303;&#x56F4;&#xFF0C;<code>end</code>&#x5728;<code>click</code>&#x4E2D;&#x7D2F;&#x52A0;
+&#x600E;&#x4E48;&#x5728;<code>draw</code>&#x533A;&#x5206;&#x4E24;&#x4E2A;&#x8303;&#x56F4;&#x5462;
+&#x7528;<code>True</code>&#x548C;<code>False</code>&#x5224;&#x65AD;&#x6B63;&#x5E38;&#x7ED8;&#x753B;&#x8FD8;&#x662F;&#x56DE;&#x9000;
+&#x56DE;&#x653E;&#x6309;&#x94AE;&#x4E2D;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x53D8;&#x91CF;<code>review = True</code>&#xFF0C;&#x5F53;&#x518D;&#x6B21;&#x7528;&#x9F20;&#x6807;&#x7ED8;&#x753B;&#x65F6;&#xFF0C;&#x5728;<code>click</code>&#x4E2D;&#x91CD;&#x65B0;&#x8D4B;&#x503C;&#x4E3A;<code>False</code>&#xFF0C;&#x4ECE;&#x800C;&#x663E;&#x793A;&#x5F53;&#x524D;&#x7684;&#x7ED8;&#x753B;&#x8FDB;&#x5EA6;
+&#x540C;&#x65F6;&#xFF0C;&#x5728;&#x56DE;&#x653E;&#x51FD;&#x6570;&#x4E2D;&#x8BBE;&#x7F6E;&#x7D2F;&#x52A0;&#x5668;<code>n += 1</code>,&#x5728;<code>draw</code>&#x5207;&#x6362;&#x5230;&#x56DE;&#x653E;&#x7684;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x6BCF;&#x6B21;&#x70B9;&#x51FB;&#x4E00;&#x6B21;&#x56DE;&#x653E;&#xFF0C;&#x7528;&#x5168;&#x5C40;end&#x51CF;&#x53BB;&#x7D2F;&#x52A0;&#x5668;&#xFF0C;&#x5B9E;&#x73B0;&#x4ECE;&#x5F53;&#x524D;&#x7248;&#x672C;&#x56DE;&#x9000;
+&#x8FD9;&#x6837;&#xFF0C;&#x624B;&#x52A8;&#x56DE;&#x9000;&#x5C31;&#x5B8C;&#x6210;&#x4E86;</li>
+</ol>
+<p><a href="http://www.codeskulptor.org/#user39_OfxcScRKeX_15.py" target="_blank">&#x94FE;&#x63A5;</a></p>
+<ol>
+<li>&#x63A5;&#x4E0B;&#x6765;&#x662F;&#x53EF;&#x53D8;&#x901F;&#x56DE;&#x653E;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x6539;&#x4E3A;&#x81EA;&#x52A8;&#x56DE;&#x9000;&#x4E86;&#xFF0C;&#x5F15;&#x5165;&#x8BA1;&#x65F6;&#x5668;&#xFF0C;&#x5728;&#x4E00;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x540E;&#xFF0C;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x56DE;&#x9000;&#x51FD;&#x6570;
+&#x539F;&#x672C;&#x60F3;&#x5728;&#x52A0;&#x901F;&#x3001;&#x51CF;&#x901F;&#x51FD;&#x6570;&#x4E2D;&#x7D2F;&#x52A0;&#x4E0D;&#x540C;&#x5927;&#x5C0F;&#x7684;&#x65F6;&#x95F4;&#x5EF6;&#x8FDF;&#xFF0C;&#x4F46;&#x597D;&#x50CF;&#x6CA1;&#x6709;&#x6548;&#x679C;&#xFF0C;&#x53EA;&#x597D;&#x5B9A;&#x4E49;&#x4E86;&#x4E09;&#x4E2A;&#x4E0D;&#x540C;&#x901F;&#x5EA6;&#x7684;&#x5B9A;&#x65F6;&#x5668;&#xFF0C;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x5F00;&#x59CB;&#x3001;&#x7ED3;&#x675F;&#x7EC4;&#x5408;
+&#x5B9E;&#x73B0;&#x53D8;&#x901F;</li>
+<li>&#x6700;&#x540E;&#xFF0C;&#x754C;&#x9762;&#x4F18;&#x5316;&#xFF0C;&#x53D8;&#x901F;&#x65F6;&#x95F4;&#x5EF6;&#x8FDF;&#x7684;&#x8C03;&#x6574;</li>
+</ol>
+<p><a href="http://www.codeskulptor.org/#user39_JvJKzy99qpcChyq.py" target="_blank">&#x94FE;&#x63A5;</a></p>
+<h5 id="%E6%9C%80%E5%90%8E">&#x6700;&#x540E;</h5>
+<p>&#x56DE;&#x653E;&#x8F93;&#x51FA;&#x4E3A;&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x7406;&#x89E3;&#x662F;&#x7528;&#x5B57;&#x5178;&#x4FDD;&#x5B58;&#x56DE;&#x653E;&#x65F6;&#x7684;&#x5143;&#x7D20;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x5C1D;&#x8BD5;&#x6253;&#x5370;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x7ED3;&#x679C;&#x4E0D;&#x592A;&#x5BF9;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x7814;&#x7A76;&#x4E00;&#x4E0B;&#x3002;</p>
+<p>&#x6709;&#x70B9;&#x4F53;&#x4F1A;&#x5230;&#x4E86;&#x201C;&#x8863;&#x5E26;&#x6E10;&#x5BBD;&#x7EC8;&#x4E0D;&#x6094;&#xFF0C;&#x4E3A;&#x4F0A;&#x6D88;&#x5F97;&#x4EBA;&#x6194;&#x60B4;&#x201D;&#x7684;&#x611F;&#x89C9;&#xFF0C;&#x6298;&#x817E;&#x4E86;&#x4E00;&#x4E0B;&#x5348;&#xFF0C;&#x5403;&#x665A;&#x996D;&#x8FD8;&#x5728;&#x60F3;&#x2026;&#x2026;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Chapter-0/Guess_the_number.html" class="navigation navigation-prev " aria-label="Previous page: IIPPy-part1:Guess_the_number"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../source/part1/Guess_the_number.html" class="navigation navigation-next " aria-label="Next page: Guess_the_number"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
