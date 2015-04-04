@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="3.2" data-basepath="../.." data-revision="Sat Apr 04 2015 13:36:48 GMT+0800 (CST)">
+    <div class="book" data-level="3.2" data-basepath="../.." data-revision="Sat Apr 04 2015 14:24:08 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -446,65 +446,75 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="codeskulptor-runs-python-programs-in-your-browser">CodeSkulptor runs Python programs in your browser.</h1>
-<h1 id="click-the-upper-left-button-to-run-this-simple-demo">Click the upper left button to run this simple demo.</h1>
-<h1 id="codeskulptor-runs-in-chrome-18-firefox-11-and-safari-6">CodeSkulptor runs in Chrome 18+, Firefox 11+, and Safari 6+.</h1>
-<h1 id="some-features-may-work-in-other-browsers-but-do-not-expect">Some features may work in other browsers, but do not expect</h1>
-<h1 id="full-functionality-it-does-not-run-in-internet-explorer">full functionality.  It does NOT run in Internet Explorer.</h1>
-<p>import simplegui
-import math</p>
-<h1 id="global-variables">Global Variables</h1>
-<p>WIDTH = 1000
+                        <p># CodeSkulptor runs Python programs in your browser.
+# Click the upper left button to run this simple demo.</p>
+<p># CodeSkulptor runs in Chrome 18+, Firefox 11+, and Safari 6+.
+# Some features may work in other browsers, but do not expect
+# full functionality.  It does NOT run in Internet Explorer.</p>
+<pre><code>import simplegui
+import math
+</code></pre><p># Global Variables</p>
+<pre><code>WIDTH = 1000
 HEIGHT = 600
 canvas_color = &quot;Black&quot;
 pos = [WIDTH / 2, HEIGHT / 2]
 BALL_RADIUS = 15
-Polygons = &quot;Round&quot;</p>
-<p>def Triangular():
-    return</p>
-<p>def Square():
-    return</p>
-<p>def Round():
-    return</p>
-<h1 id="event-handlers">Event Handlers</h1>
-<p>def red():
+Polygons = &quot;Round&quot;
+
+def Triangular():
+    return
+
+def Square():
+    return
+
+def Round():
+    return
+</code></pre><p># Event Handlers</p>
+<pre><code>def red():
     global canvas_color
-    canvas_color = &quot;Red&quot;</p>
-<p>def yellow():
+    canvas_color = &quot;Red&quot;
+
+def yellow():
     global canvas_color
-    canvas_color = &quot;Yellow&quot;</p>
-<p>def green():
+    canvas_color = &quot;Yellow&quot;
+
+def green():
     global canvas_color
-    canvas_color = &quot;Green&quot;</p>
-<p>def blue():
+    canvas_color = &quot;Green&quot;
+
+def blue():
     global canvas_color
-    canvas_color = &quot;Blue&quot;</p>
-<p>def black():
+    canvas_color = &quot;Blue&quot;
+
+def black():
     global canvas_color
-    canvas_color = &quot;Black&quot;</p>
-<h1 id="handler-for-mouse-click">Handler for mouse click</h1>
-<p>def click(posin):
+    canvas_color = &quot;Black&quot;
+</code></pre><p># Handler for mouse click</p>
+<pre><code>def click(posin):
     global pos
-    pos = list(posin)</p>
-<p>def Triangular():
+    pos = list(posin)
+
+def Triangular():
     global Polygons
-    Polygons = &quot;Triangular&quot;</p>
-<p>def Square():
+    Polygons = &quot;Triangular&quot;
+
+def Square():
     global Polygons
-    Polygons = &quot;Square&quot;</p>
-<p>def Round():
+    Polygons = &quot;Square&quot;
+
+def Round():
     global Polygons
-    Polygons = &quot;Round&quot;</p>
-<h1 id="handler-to-draw-on-canvas">Handler to draw on canvas</h1>
-<p>def draw(canvas):
+    Polygons = &quot;Round&quot;
+</code></pre><p># Handler to draw on canvas</p>
+<pre><code>def draw(canvas):
     if Polygons == &quot;Triangular&quot;:
         canvas.draw_polygon([(pos[0], pos[1]-25), (pos[0]-25, pos[1]+25), (pos[0]+25,pos[1]+25)], 5, &quot;White&quot;, canvas_color)
     elif Polygons == &quot;Square&quot;:
         canvas.draw_polygon([(pos[0]-25, pos[1]-25), (pos[0]-25, pos[1]+25), (pos[0]+25, pos[1]+25), (pos[0]+25, pos[1]-25)], 5, &quot;White&quot;, canvas_color)
     elif Polygons == &quot;Round&quot;:
-        canvas.draw_circle(pos, BALL_RADIUS, 1, &quot;White&quot;, canvas_color)</p>
-<h1 id="create-a-frame-and-assign-callbacks-to-event-handlers">Create a frame and assign callbacks to event handlers</h1>
-<p>frame = simplegui.create_frame(&quot;Home&quot;, 1000, 600)
+        canvas.draw_circle(pos, BALL_RADIUS, 1, &quot;White&quot;, canvas_color)
+</code></pre><p># Create a frame and assign callbacks to event handlers</p>
+<pre><code>frame = simplegui.create_frame(&quot;Home&quot;, 1000, 600)
 frame.set_canvas_background(&apos;White&apos;)
 frame.add_button(&apos;Triangular&apos;, Triangular, 80)
 frame.add_button(&apos;Square&apos;, Square, 80)
@@ -515,10 +525,10 @@ frame.add_button(&quot;Green&quot;, green, 60)
 frame.add_button(&quot;Blue&quot;, blue, 60)
 frame.add_button(&quot;Black&quot;, black, 60)
 frame.set_draw_handler(draw)
-frame.set_mouseclick_handler(click)</p>
-<h1 id="start-the-frame-animation">Start the frame animation</h1>
-<p>frame.start()</p>
-
+frame.set_mouseclick_handler(click)
+</code></pre><p># Start the frame animation</p>
+<pre><code>frame.start()
+</code></pre>
                     
                     </section>
                 

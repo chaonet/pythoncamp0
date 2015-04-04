@@ -34,7 +34,7 @@
     
 
         
-    <div class="book" data-level="3.5" data-basepath="../.." data-revision="Sat Apr 04 2015 13:36:48 GMT+0800 (CST)">
+    <div class="book" data-level="3.5" data-basepath="../.." data-revision="Sat Apr 04 2015 14:24:08 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -444,14 +444,14 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="codeskulptor-runs-python-programs-in-your-browser">CodeSkulptor runs Python programs in your browser.</h1>
-<h1 id="click-the-upper-left-button-to-run-this-simple-demo">Click the upper left button to run this simple demo.</h1>
-<h1 id="codeskulptor-runs-in-chrome-18-firefox-11-and-safari-6">CodeSkulptor runs in Chrome 18+, Firefox 11+, and Safari 6+.</h1>
-<h1 id="some-features-may-work-in-other-browsers-but-do-not-expect">Some features may work in other browsers, but do not expect</h1>
-<h1 id="full-functionality-it-does-not-run-in-internet-explorer">full functionality.  It does NOT run in Internet Explorer.</h1>
-<p>import simplegui</p>
-<h1 id="global-variables">Global Variables</h1>
-<p>WIDTH = 1000
+                        <p># CodeSkulptor runs Python programs in your browser.
+# Click the upper left button to run this simple demo.</p>
+<p># CodeSkulptor runs in Chrome 18+, Firefox 11+, and Safari 6+.
+# Some features may work in other browsers, but do not expect
+# full functionality.  It does NOT run in Internet Explorer.</p>
+<pre><code>import simplegui
+</code></pre><p># Global Variables</p>
+<pre><code>WIDTH = 1000
 HEIGHT = 600
 canvas_color = &quot; &quot;
 Polygons = &quot; &quot;
@@ -461,34 +461,41 @@ end = 1
 review_n = 0
 review = False
 speed = 500
-file_out = []</p>
-<h1 id="event-handlers">Event Handlers</h1>
-<p>def red():
+file_out = []
+</code></pre><p># Event Handlers</p>
+<pre><code>def red():
     global canvas_color
-    canvas_color = &quot;Red&quot;</p>
-<p>def yellow():
+    canvas_color = &quot;Red&quot;
+
+def yellow():
     global canvas_color
-    canvas_color = &quot;Yellow&quot;</p>
-<p>def green():
+    canvas_color = &quot;Yellow&quot;
+
+def green():
     global canvas_color
-    canvas_color = &quot;Green&quot;</p>
-<p>def blue():
+    canvas_color = &quot;Green&quot;
+
+def blue():
     global canvas_color
-    canvas_color = &quot;Blue&quot;</p>
-<p>def black():
+    canvas_color = &quot;Blue&quot;
+
+def black():
     global canvas_color
-    canvas_color = &quot;Black&quot;</p>
-<p>def Triangular():
+    canvas_color = &quot;Black&quot;
+
+def Triangular():
     global Polygons
-    Polygons = &quot;Triangular&quot;</p>
-<p>def Square():
+    Polygons = &quot;Triangular&quot;
+
+def Square():
     global Polygons
-    Polygons = &quot;Square&quot;</p>
-<p>def Round():
+    Polygons = &quot;Square&quot;
+
+def Round():
     global Polygons
-    Polygons = &quot;Round&quot;</p>
-<h1 id="handler-for-mouse-click">Handler for mouse click</h1>
-<p>def click(pos):
+    Polygons = &quot;Round&quot;
+</code></pre><p># Handler for mouse click</p>
+<pre><code>def click(pos):
     global Pol_list, review, end, review_n, canvas_color, Polygons
     if canvas_color == &quot; &quot;:
         canvas_color = &quot;Red&quot;
@@ -498,29 +505,34 @@ file_out = []</p>
     Pol_list.append([pos_cu[0], pos_cu[1], canvas_color, Polygons])
     end += 1
     review_n = 0
-    review = False</p>
-<p>def review():
+    review = False
+
+def review():
     global review_n, review, file_out
     review = True
-    review_n += 1</p>
-<p>def start():
+    review_n += 1
+
+def start():
     timer.start()
     timer_slow.stop()
-    timer_fast.stop()</p>
-<p>def stop():
+    timer_fast.stop()
+
+def stop():
     timer.stop()
     timer_slow.stop()
-    timer_fast.stop()</p>
-<p>def speed_fast():
+    timer_fast.stop()
+
+def speed_fast():
     timer_fast.start()
     timer.stop()
-    timer_slow.stop()</p>
-<p>def speed_slow():
+    timer_slow.stop()
+
+def speed_slow():
     timer_slow.start()
     timer.stop()
-    timer_fast.stop()</p>
-<h1 id="handler-to-draw-on-canvas">Handler to draw on canvas</h1>
-<p>def draw(canvas) :
+    timer_fast.stop()
+</code></pre><p># Handler to draw on canvas</p>
+<pre><code>def draw(canvas) :
     if review == False :
         for Poly in Pol_list[be:end]:
             if Poly[3] == &quot;Triangular&quot;:
@@ -536,22 +548,25 @@ file_out = []</p>
             elif Poly[3] == &quot;Square&quot;:
                 canvas.draw_polygon([[Poly[0]-25, Poly[1]-25], [Poly[0]-25, Poly[1]+25], [Poly[0]+25, Poly[1]+25], [Poly[0]+25, Poly[1]-25]], 5, &quot;White&quot;, Poly[2])
             elif Poly[3] == &quot;Round&quot;:
-                canvas.draw_circle([Poly[0], Poly[1]], 15, 1, &quot;White&quot;, Poly[2])</p>
-<h1 id="create-a-frame-and-assign-callbacks-to-event-handlers">Create a frame and assign callbacks to event handlers</h1>
-<p>frame = simplegui.create_frame(&quot;Drawing board&quot;, 1000, 600)
-frame.set_canvas_background(&apos;White&apos;)</p>
-<p>label1 = frame.add_label(&apos;shape&apos;)
+                canvas.draw_circle([Poly[0], Poly[1]], 15, 1, &quot;White&quot;, Poly[2])
+</code></pre><p># Create a frame and assign callbacks to event handlers</p>
+<pre><code>frame = simplegui.create_frame(&quot;Drawing board&quot;, 1000, 600)
+frame.set_canvas_background(&apos;White&apos;)
+
+label1 = frame.add_label(&apos;shape&apos;)
 frame.add_button(&apos;Triangular&apos;, Triangular, 80)
 frame.add_button(&apos;Square&apos;, Square, 80)
 frame.add_button(&apos;Round&apos;, Round, 80)
-label2 = frame.add_label(&apos;&apos;)</p>
-<p>label3 = frame.add_label(&apos;color&apos;)
+label2 = frame.add_label(&apos;&apos;)
+
+label3 = frame.add_label(&apos;color&apos;)
 frame.add_button(&quot;Red&quot;, red, 60)
 frame.add_button(&quot;Yellow&quot;, yellow, 60)
 frame.add_button(&quot;Green&quot;, green, 60)
 frame.add_button(&quot;Blue&quot;, blue, 60)
-frame.add_button(&quot;Black&quot;, black, 60)</p>
-<p>label4 = frame.add_label(&apos;&apos;)
+frame.add_button(&quot;Black&quot;, black, 60)
+
+label4 = frame.add_label(&apos;&apos;)
 label5 = frame.add_label(&apos;review&apos;)
 frame.add_button(&quot;review_start&quot;, start, 100)
 label6 = frame.add_label(&apos;&apos;)
@@ -559,15 +574,17 @@ label7 = frame.add_label(&apos;speed&apos;)
 frame.add_button(&quot;fast&quot;, speed_fast, 100)
 frame.add_button(&quot;slow&quot;, speed_slow, 100)
 label6 = frame.add_label(&apos;&apos;)
-frame.add_button(&quot;review_stop&quot;, stop, 100)</p>
-<p>timer = simplegui.create_timer(1000, review)
-timer_slow = simplegui.create_timer(2000, review)
-timer_fast = simplegui.create_timer(100, review)</p>
-<p>frame.set_draw_handler(draw)
-frame.set_mouseclick_handler(click)</p>
-<h1 id="start-the-frame-animation">Start the frame animation</h1>
-<p>frame.start()</p>
+frame.add_button(&quot;review_stop&quot;, stop, 100)
 
+timer = simplegui.create_timer(1000, review)
+timer_slow = simplegui.create_timer(2000, review)
+timer_fast = simplegui.create_timer(100, review)
+
+frame.set_draw_handler(draw)
+frame.set_mouseclick_handler(click)
+</code></pre><p># Start the frame animation</p>
+<pre><code>frame.start()
+</code></pre>
                     
                     </section>
                 

@@ -49,4 +49,4 @@ priint时，最后加`,"\n"`进行换行
 
 尝试次数归零后，还不能强行终止
 
-[代码](source/part1/Guess_the_number.md)
+[代码：Guess_the_number]
