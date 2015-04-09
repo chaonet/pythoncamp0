@@ -1,5 +1,10 @@
 import pygame
 import random
+#import sys
+#import os
+#from pygame.locals import *
+
+
 
 pygame.init()
 
@@ -30,7 +35,6 @@ def new_game():
     print "New game. Range is from 0 to 100"
     print "Number of remaining guesses is 10","\n"
     num_random = random.randint(0, 100)
-    print num_random
     ai_guess = Ai()
     compare ()
   
@@ -43,35 +47,31 @@ def compare ():
       guess = ai_guess.policy(status)
       print "Guess was",guess
       num_try = num_try - 1
-      print "Number of remaining guess is",num_try
-
+      
       if guess > num_random:
-         print "Higher","\n"
+         print "Higher"
          status = "Higher"
       elif guess < num_random:
-         print "Lower","\n"
+         print "Lower"
          status = "Lower"
       else :
-         print "Correct!","\n"
+         print "Correct!"
          #new_game()
-         done=True
          exit()
+      print "Number of remaining guess is",num_try, "\n"
 
 
 # create frame
 
-screen = pygame.display.set_mode((640, 480), 0, 32)
+#screen = pygame.display.set_mode((640, 480))
 
-pygame.display.set_caption("Guess number")
+#pygame.display.set_caption("Guess number")
+#screen.fill((255,255,255))
 
-pygame.draw.rect(screen, [0,0,0], [150, 10, 50, 20], width=0)
+#pygame.display.flip()
+#clock.tick(60) 
 
-screen.fill(WHITE)
-
-pygame.display.flip()
-
-
-pygame.quit()
+#pygame.quit()
 
 # register event handlers for control elements and start frame
 
