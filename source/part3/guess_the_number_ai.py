@@ -3,11 +3,13 @@ import random
 import time
 #import sys
 #import os
-#from pygame.locals import *
+from pygame.locals import *
 
 
 
 pygame.init()
+
+pygame.font.init()
 
 pygame.display.set_caption("Guess number")
 
@@ -15,7 +17,26 @@ screen = pygame.display.set_mode((640, 480))
 
 screen.fill((255,255,255))
 
+background = pygame.Surface(screen.get_size())
+background = background.convert()
+background.fill((250, 250, 250))
+
+font = pygame.font.Font(None, 36)
+
+text = font.render("Hello!", 1, (10, 10, 10))
+
+textpos = text.get_rect()
+
+textpos.centerx = background.get_rect().centerx
+
+background.blit(text, textpos)
+
+screen.blit(background,(0,0))
+
+pygame.display.flip()
+
 num_random = 0
+
 
 class Ai():
     def __init__(self):
@@ -36,9 +57,15 @@ class Ai():
 
 def new_game():
     # initialize global variables used in your code here
-    global ai_guess, num_random
+    global ai_guess, num_random, text, textpos, background, font
     
     pygame.draw.rect(screen,[255,0,0],[250,150,300,200],3)
+    font = pygame.font.Font(None, 36)
+    text = font.render("New game. Range is from 0 to 100", 1, (10, 10, 10)) 
+    textpos = text.get_rect()
+    textpos.centerx = background.get_rect().centerx
+    background.blit(text, textpos)
+    screen.blit(background,(0,0))
     print "New game. Range is from 0 to 100"
     print "Number of remaining guesses is 10","\n"
     pygame.time.delay(1000)
