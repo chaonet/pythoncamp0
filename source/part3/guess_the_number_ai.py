@@ -1,5 +1,6 @@
 import pygame
 import random
+import time
 #import sys
 #import os
 #from pygame.locals import *
@@ -7,6 +8,12 @@ import random
 
 
 pygame.init()
+
+pygame.display.set_caption("Guess number")
+
+screen = pygame.display.set_mode((640, 480))
+
+screen.fill((255,255,255))
 
 num_random = 0
 
@@ -30,10 +37,11 @@ class Ai():
 def new_game():
     # initialize global variables used in your code here
     global ai_guess, num_random
-    done = False
-    clock = pygame.time.Clock()
+    
+    pygame.draw.rect(screen,[255,0,0],[250,150,300,200],3)
     print "New game. Range is from 0 to 100"
     print "Number of remaining guesses is 10","\n"
+    pygame.time.delay(1000)
     num_random = random.randint(0, 100)
     ai_guess = Ai()
     compare ()
@@ -59,16 +67,13 @@ def compare ():
          #new_game()
          exit()
       print "Number of remaining guess is",num_try, "\n"
+      pygame.time.delay(1000)
 
 
 # create frame
 
-#screen = pygame.display.set_mode((640, 480))
-
-#pygame.display.set_caption("Guess number")
-#screen.fill((255,255,255))
-
-#pygame.display.flip()
+pygame.display.flip()
+#pygame.time.delay(1000)
 #clock.tick(60) 
 
 #pygame.quit()
