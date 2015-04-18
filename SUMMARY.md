@@ -10,14 +10,15 @@
   * [Markdown 教程](Chapter-0/Markdown.md)
   * [Mailling-List 教程]()
   * [Github 教程]()
-  * [部署gitbook](Chapter-0/publish_gitbook_and_using_Disqus.md)
+  * [部署gitbook和disqus](Chapter-0/publish_gitbook_and_using_Disqus.md)
   * [IIPPy-part1:Guess_the_number](Chapter-0/Guess_the_number.md)
   * [week2 QA]()
 * [进击 IIPPy-part2]
   * [可回放的点彩画板](Chapter-1/Drawing_board.md)
+  * [ubuntu系统中CodeSkulptor本地化](Chapter-1/SimpleGUICS2Pygame.md)
   * [week3 QA](Chapter-1/week3QA.md)
 * [source]
   * [Guess_the_number](source/part1/Guess_the_number.md)
-  * [Drawing board V4.0](source/part2/Drawing_board_V4.0.md)
+  * [Drawing board](source/part2/Drawing_board_V4.0.md)
 * [结尾]()
 
