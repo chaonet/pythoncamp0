@@ -17,6 +17,12 @@
   * [可回放的点彩画板](Chapter-1/Drawing_board.md)
   * [ubuntu系统中CodeSkulptor本地化](Chapter-1/SimpleGUICS2Pygame.md)
   * [week3 QA](Chapter-1/week3QA.md)
+* [BookGiver]
+  * [平台和工具的选择](Chapter-2/平台和工具的选择.md)
+  * [微信与SAE对接](Chapter-2/微信与SAE对接.md)
+  * [tmux+curl+本地调测](Chapter-2/tmux+curl+本地调测.md)
+  * [公众号自动应答](Chapter-2/公众号自动应答.md)
+  * [本地环境测试命令自动编辑&执行](Chapter-2/本地环境测试命令自动编辑&执行.md)
 * [source]
   * [Guess_the_number](source/part1/Guess_the_number.md)
   * [Drawing board](source/part2/Drawing_board_V4.0.md)
