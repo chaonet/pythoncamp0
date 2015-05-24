@@ -1,0 +1,584 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Guess_the_number | Python的学习记录</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.1">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../../source/part2/Drawing_board_V4.0.html" />
+    
+    
+    <link rel="prev" href="../../Chapter-2/本地环境测试命令自动编辑&amp;执行.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="4.1" data-basepath="../.." data-revision="Sun May 24 2015 23:02:17 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> 缘起</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" >
+            
+            <span><b>1.1.</b> 网易云课堂</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+            <span><b>1.2.</b> 注册Github</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+            <span><b>1.3.</b> 注册并使用gitbook</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+            <span><b>1.4.</b> git发布私人图书</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+            <span><b>1.5.</b> 熟悉 Python REPL</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+            <span><b>1.6.</b> 开光大会的心得总结</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Chapter-0/Markdown.html">
+            
+                
+                    <a href="../../Chapter-0/Markdown.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Markdown 教程
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+            <span><b>1.8.</b> Mailling-List 教程</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+            <span><b>1.9.</b> Github 教程</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="Chapter-0/publish_gitbook_and_using_Disqus.html">
+            
+                
+                    <a href="../../Chapter-0/publish_gitbook_and_using_Disqus.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        部署gitbook和disqus
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="Chapter-0/Guess_the_number.html">
+            
+                
+                    <a href="../../Chapter-0/Guess_the_number.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.11.</b>
+                        
+                        IIPPy-part1:Guess_the_number
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+            <span><b>1.12.</b> week2 QA</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> [进击 IIPPy-part2]</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="Chapter-1/Drawing_board.html">
+            
+                
+                    <a href="../../Chapter-1/Drawing_board.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        可回放的点彩画板
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Chapter-1/SimpleGUICS2Pygame.html">
+            
+                
+                    <a href="../../Chapter-1/SimpleGUICS2Pygame.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        ubuntu系统中CodeSkulptor本地化
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Chapter-1/week3QA.html">
+            
+                
+                    <a href="../../Chapter-1/week3QA.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        week3 QA
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> [BookGiver]</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="Chapter-2/平台和工具的选择.html">
+            
+                
+                    <a href="../../Chapter-2/平台和工具的选择.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        平台和工具的选择
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="Chapter-2/微信与SAE对接.html">
+            
+                
+                    <a href="../../Chapter-2/微信与SAE对接.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        微信与SAE对接
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="Chapter-2/tmux+curl+本地调测.html">
+            
+                
+                    <a href="../../Chapter-2/tmux+curl+本地调测.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        tmux+curl+本地调测
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Chapter-2/公众号自动应答.html">
+            
+                
+                    <a href="../../Chapter-2/公众号自动应答.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        公众号自动应答
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="Chapter-2/本地环境测试命令自动编辑&amp;执行.html">
+            
+                
+                    <a href="../../Chapter-2/本地环境测试命令自动编辑&amp;执行.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        本地环境测试命令自动编辑&amp;执行
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> [source]</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.1" data-path="source/part1/Guess_the_number.html">
+            
+                
+                    <a href="../../source/part1/Guess_the_number.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Guess_the_number
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="source/part2/Drawing_board_V4.0.html">
+            
+                
+                    <a href="../../source/part2/Drawing_board_V4.0.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Drawing board
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" >
+            
+            <span><b>5.</b> 结尾</span>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Python的学习记录</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <p># template for &quot;Guess the number&quot; mini-project</p>
+<p># input will come from buttons and an input field</p>
+<p># all output for the game will be printed in the console</p>
+<pre><code>import simplegui
+
+import math
+
+import random
+
+num_range = 100
+</code></pre><p># helper function to start and restart the game</p>
+<pre><code>def new_game():
+    # initialize global variables used in your code here
+    global num_random, n
+    n = 0
+    print &quot;New game. Range is from 0 to &quot;, num_range
+    print &quot;Number of remaining guesses is&quot;, (math.log(num_range, 10)*3 +1),&quot;\n&quot;
+    num_random = random.randrange(0, num_range)
+    input_guess
+    pass
+</code></pre><p># define event handlers for control panel</p>
+<pre><code>def range100():
+    # button that changes the range to [0,100) and starts a new game 
+    global num_range
+    num_range = 100
+    new_game()    
+    pass
+
+def range1000():
+    # button that changes the range to [0,1000) and starts a new game     
+    global num_range
+    num_range = 1000
+    new_game()
+    pass
+
+
+def input_guess(guess):
+    # main game logic goes here    
+    global num_random , n
+    n += 1.0
+    print &quot;Guess was&quot;,int(guess)
+    num_try= (math.log(num_range, 10)* 3+ 1) - n
+    print &quot;Number of remaining guess is&quot;,num_try
+    if int(guess) &gt; num_random:
+        print &quot;Higher!&quot;,&quot;\n&quot;
+    elif int(guess) &lt; num_random:
+        print &quot;Lower!&quot;,&quot;\n&quot;
+    elif int(guess) == num_random:
+        print &quot;Correct!&quot;,&quot;\n&quot;
+        new_game()
+    pass
+</code></pre><p># create frame</p>
+<pre><code>f = simplegui.create_frame(&quot;Guess the number&quot;,200,200)
+</code></pre><p># register event handlers for control elements and start frame</p>
+<pre><code>f.add_button(&quot;Range is [0,100)&quot;, range100, 100)
+f.add_button(&quot;Range is [0,1000)&quot;, range1000, 100)
+f.add_input(&quot;Enter a guess&quot;, input_guess, 100)
+</code></pre><p># call new_game </p>
+<pre><code>new_game()
+</code></pre><p># always remember to check your completed program against the grading rubric</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../Chapter-2/本地环境测试命令自动编辑&amp;执行.html" class="navigation navigation-prev " aria-label="Previous page: 本地环境测试命令自动编辑&amp;执行"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../source/part2/Drawing_board_V4.0.html" class="navigation navigation-next " aria-label="Next page: Drawing board"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-disqus/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"disqus":{"shortName":"chaonet"}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

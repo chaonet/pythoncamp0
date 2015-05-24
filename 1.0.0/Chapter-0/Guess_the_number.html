@@ -1,0 +1,554 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>IIPPy-part1:Guess_the_number | Python的学习记录</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.1">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../Chapter-1/Drawing_board.html" />
+    
+    
+    <link rel="prev" href="../Chapter-0/publish_gitbook_and_using_Disqus.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="1.11" data-basepath=".." data-revision="Sun May 24 2015 23:02:17 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> 缘起</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" >
+            
+            <span><b>1.1.</b> 网易云课堂</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+            <span><b>1.2.</b> 注册Github</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+            <span><b>1.3.</b> 注册并使用gitbook</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+            <span><b>1.4.</b> git发布私人图书</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+            <span><b>1.5.</b> 熟悉 Python REPL</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+            <span><b>1.6.</b> 开光大会的心得总结</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Chapter-0/Markdown.html">
+            
+                
+                    <a href="../Chapter-0/Markdown.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Markdown 教程
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+            <span><b>1.8.</b> Mailling-List 教程</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+            <span><b>1.9.</b> Github 教程</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="Chapter-0/publish_gitbook_and_using_Disqus.html">
+            
+                
+                    <a href="../Chapter-0/publish_gitbook_and_using_Disqus.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        部署gitbook和disqus
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="Chapter-0/Guess_the_number.html">
+            
+                
+                    <a href="../Chapter-0/Guess_the_number.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.11.</b>
+                        
+                        IIPPy-part1:Guess_the_number
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+            <span><b>1.12.</b> week2 QA</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> [进击 IIPPy-part2]</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="Chapter-1/Drawing_board.html">
+            
+                
+                    <a href="../Chapter-1/Drawing_board.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        可回放的点彩画板
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Chapter-1/SimpleGUICS2Pygame.html">
+            
+                
+                    <a href="../Chapter-1/SimpleGUICS2Pygame.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        ubuntu系统中CodeSkulptor本地化
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Chapter-1/week3QA.html">
+            
+                
+                    <a href="../Chapter-1/week3QA.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        week3 QA
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> [BookGiver]</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="Chapter-2/平台和工具的选择.html">
+            
+                
+                    <a href="../Chapter-2/平台和工具的选择.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        平台和工具的选择
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="Chapter-2/微信与SAE对接.html">
+            
+                
+                    <a href="../Chapter-2/微信与SAE对接.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        微信与SAE对接
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="Chapter-2/tmux+curl+本地调测.html">
+            
+                
+                    <a href="../Chapter-2/tmux+curl+本地调测.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        tmux+curl+本地调测
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Chapter-2/公众号自动应答.html">
+            
+                
+                    <a href="../Chapter-2/公众号自动应答.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        公众号自动应答
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="Chapter-2/本地环境测试命令自动编辑&amp;执行.html">
+            
+                
+                    <a href="../Chapter-2/本地环境测试命令自动编辑&amp;执行.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        本地环境测试命令自动编辑&amp;执行
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> [source]</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="source/part1/Guess_the_number.html">
+            
+                
+                    <a href="../source/part1/Guess_the_number.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Guess_the_number
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="source/part2/Drawing_board_V4.0.html">
+            
+                
+                    <a href="../source/part2/Drawing_board_V4.0.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Drawing board
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" >
+            
+            <span><b>5.</b> 结尾</span>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Python的学习记录</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h4 id="%E9%9C%80%E8%A6%81%E7%9A%84%E7%BC%96%E7%A8%8B%E7%9F%A5%E8%AF%86%EF%BC%9A">&#x9700;&#x8981;&#x7684;&#x7F16;&#x7A0B;&#x77E5;&#x8BC6;&#xFF1A;</h4>
+<h4 id="%E6%9C%80%E5%88%9D%E6%9E%84%E6%80%9D%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84">&#x6700;&#x521D;&#x6784;&#x601D;&#x7684;&#x7A0B;&#x5E8F;&#x7ED3;&#x6784;</h4>
+<p>&#x6309;&#x94AE;&#xFF1A;&#x5B9E;&#x73B0;&#x968F;&#x673A;&#x6570;&#x7684;&#x751F;&#x6210;&#x3001;&#x5F00;&#x59CB;&#x65B0;&#x6E38;&#x620F;</p>
+<p>&#x6587;&#x672C;&#x6846;&#xFF1A;&#x8F93;&#x5165;&#x731C;&#x6D4B;&#x503C;</p>
+<p>&#x540E;&#x53F0;&#xFF1A;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#xFF0C;&#x6253;&#x5370;&#x51FA;&#x6BD4;&#x8F83;&#x7684;&#x7ED3;&#x679C;</p>
+<p>&#x6B21;&#x6570;&#x9650;&#x5236;</p>
+<p>&#x7136;&#x540E;&#x53D1;&#x73B0;Coursera&#x4E0A;&#x8001;&#x5E08;&#x7ED9;&#x4E86;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x6846;&#x3001;&#x4E24;&#x4E2A;&#x6309;&#x94AE;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;&#x3001;&#x4E00;&#x4E2A;<code>new_game</code>&#x7684;&#x51FD;&#x6570;&#x2026;&#x2026;</p>
+<h4 id="%E9%87%8D%E6%96%B0%E6%9E%84%E6%80%9D">&#x91CD;&#x65B0;&#x6784;&#x601D;</h4>
+<p><code>new_game</code>&#x7684;&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x9996;&#x6B21;&#x8FD0;&#x884C;</p>
+<p>&#x4E24;&#x4E2A;&#x6309;&#x94AE;&#x5206;&#x522B;&#x8C03;&#x7528;0~100&#x3001;0~1000&#x7684;&#x51FD;&#x6570;</p>
+<p>&#x8FD9;&#x4E09;&#x4E2A;&#x51FD;&#x6570;&#x90FD;&#x8C03;&#x7528;&#x5BF9;&#x6587;&#x672C;&#x7684;&#x5224;&#x65AD;</p>
+<h4 id="%E6%9C%80%E7%BB%88%E7%A1%AE%E5%AE%9A%E7%BB%93%E6%9E%84">&#x6700;&#x7EC8;&#x786E;&#x5B9A;&#x7ED3;&#x6784;</h4>
+<p>&#x4ED4;&#x7EC6;&#x770B;&#x4E86;&#x8BFE;&#x7A0B;&#x4E2D;&#x8001;&#x5E08;&#x7684;&#x4EE3;&#x7801;&#x9690;&#x85CF;&#x7684;&#x884C;&#x6570;&#xFF0C;&#x5F7B;&#x5E95;&#x63A8;&#x7FFB;&#x539F;&#x5148;&#x7684;&#x7A0B;&#x5E8F;&#x7ED3;&#x6784;</p>
+<p>&#x63A8;&#x6D4B;&#x51FA;<code>new_game</code>&#x4E3A;&#x4E3B;&#x7A0B;&#x5E8F;&#xFF0C;&#x5F00;&#x59CB;&#x65F6;&#x7531;&#x5168;&#x5C40;&#x5B9A;&#x4E49;&#x7684;<code>num_range</code>&#x786E;&#x5B9A;&#x9ED8;&#x8BA4;&#x968F;&#x673A;&#x6570;&#x8303;&#x56F4;0~100</p>
+<p>&#x7136;&#x540E;&#x7531;&#x4E24;&#x4E2A;&#x6309;&#x94AE;&#x8FDB;&#x884C;&#x5BF9;<code>num_range</code>&#x7684;&#x91CD;&#x65B0;&#x8D4B;&#x503C;&#x5E76;&#x4F20;&#x9012;&#x7ED9;<code>new_game</code></p>
+<p>&#x6700;&#x7EC8;&#x7531;<code>new_game</code>&#x8C03;&#x7528;&#x6587;&#x672C;&#x6846;&#x6267;&#x884C;&#x5224;&#x65AD;</p>
+<h4 id="%E5%86%85%E5%AE%B9%E8%B0%83%E6%95%B4">&#x5185;&#x5BB9;&#x8C03;&#x6574;</h4>
+<p><code>range100</code>&#x548C;<code>range1000</code>&#x7684;&#x4EE3;&#x7801;&#x6700;&#x5148;&#x786E;&#x5B9A;</p>
+<p>&#x7136;&#x540E;&#x5F00;&#x59CB;&#x8003;&#x8651;&#x5C1D;&#x8BD5;&#x6B21;&#x6570;&#x5982;&#x4F55;&#x751F;&#x6210;&#xFF0C;&#x60F3;&#x5230;&#x4E86;&#x516C;&#x5F0F; N*3+1&#xFF0C;N&#x4E3A;<code>0</code>&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x4F46;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x5462;&#xFF1F;</p>
+<p>&#x60F3;&#x8D77;&#x5F15;&#x5165;&#x7684;<code>math</code>&#x6A21;&#x5757;&#x8FD8;&#x6CA1;&#x4F7F;&#x7528;&#xFF0C;&#x67E5;&#x9605;&#x4E86;&#x6587;&#x6863;&#xFF0C;&#x627E;&#x5230;<code>math.log()</code>&#x51FD;&#x6570;</p>
+<p>&#x7136;&#x540E;&#x7EA0;&#x7ED3;<code>new_game</code>&#x548C;<code>input_guess</code>&#x4E4B;&#x95F4;&#x968F;&#x673A;&#x6570;&#x7684;&#x4F20;&#x9012;</p>
+<p>&#x540E;&#x6765;&#x901A;&#x8FC7;&#x540C;&#x65F6;&#x5B9A;&#x4E49;<code>global num_random</code>&#x5B8C;&#x6210;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x662F;&#x5269;&#x4F59;&#x6B21;&#x6570;&#x7684;&#x6539;&#x53D8;&#xFF0C;&#x7531;&#x4E8E;&#x9700;&#x8981;&#x6BCF;&#x89E6;&#x53D1;&#x4E00;&#x6B21;&#x6587;&#x672C;&#x5C31;&#x51CF;&#x4E00;&#xFF0C;&#x6240;&#x4EE5;&#x60F3;&#x5230;&#x7528;&#x4E00;&#x4E2A;&#x65B0;&#x53D8;&#x91CF;<code>n</code>&#x8FDB;&#x884C;&#x7D2F;&#x52A0;&#xFF0C;&#x5E76;&#x7528;&#x5269;&#x4F59;&#x6B21;&#x6570;&#x51CF;&#x53BB;<code>n</code></p>
+<p>&#x540C;&#x6837;&#x5FC5;&#x987B;&#x5728;<code>new_game</code>&#x548C;<code>input_guess</code>&#x540C;&#x65F6;&#x5B9A;&#x4E49;<code>n</code></p>
+<p>priint&#x65F6;&#xFF0C;&#x6700;&#x540E;&#x52A0;<code>,&quot;\n&quot;</code>&#x8FDB;&#x884C;&#x6362;&#x884C;</p>
+<h4 id="%E6%9C%89%E5%BE%85%E5%AE%8C%E5%96%84%E7%9A%84%E5%9C%B0%E6%96%B9">&#x6709;&#x5F85;&#x5B8C;&#x5584;&#x7684;&#x5730;&#x65B9;</h4>
+<p>&#x8F6C;&#x6362;&#xFF1A;&#x8F6C;&#x6362;&#x6210;&#x6B21;&#x6570;&#x65F6;&#xFF0C;&#x4E0D;&#x77E5;&#x4E3A;&#x4EC0;&#x4E48;&#xFF0C;&#x4EA7;&#x751F;&#x7684;&#x662F;&#x6D6E;&#x70B9;&#x6570;&#xFF0C;&#x4F7F;&#x7528;int()&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#xFF0C;1000&#x8F6C;&#x6362;&#x5931;&#x8D25;</p>
+<p>10.0&#x4F9D;&#x6B21;&#x51CF;&#x4E00;&#xFF0C;1.0&#x4E4B;&#x540E;&#x663E;&#x793A;&#x7684;&#x5374;&#x4E0D;&#x662F;0.0</p>
+<p>&#x5C1D;&#x8BD5;&#x6B21;&#x6570;&#x5F52;&#x96F6;&#x540E;&#xFF0C;&#x8FD8;&#x4E0D;&#x80FD;&#x5F3A;&#x884C;&#x7EC8;&#x6B62;</p>
+<p>[&#x4EE3;&#x7801;&#xFF1A;Guess_the_number]</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Chapter-0/publish_gitbook_and_using_Disqus.html" class="navigation navigation-prev " aria-label="Previous page: 部署gitbook和disqus"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Chapter-1/Drawing_board.html" class="navigation navigation-next " aria-label="Next page: 可回放的点彩画板"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-disqus/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"disqus":{"shortName":"chaonet"}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

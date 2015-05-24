@@ -42,7 +42,7 @@ https://www.gitbook.com/
 
 开始编译
 
-`$ gitbook build ./`
+`$ gitbook build ./ [version]`
 
 报错，提示“/usr/bin/env: node: 没有那个文件或目录”
 
@@ -52,7 +52,7 @@ https://www.gitbook.com/
 
 再试编译，提示想要使用 gitbook command，需要卸载gitbook ，安装 'gitbook-cli'
 ```
-$ gitbook build ./
+$ gitbook build ./ 1.0.0
 You need to install 'gitbook-cli' to have access to the gitbook command anywhere on your system.
 If you've installed this package globally, you need to uninstall it.
 >> Run 'npm uninstall -g gitbook' then 'npm install -g gitbook-cli'
@@ -151,7 +151,7 @@ gitbook-plugin-disqus@0.0.1 ../node_modules/gitbook-plugin-disqus
 
 编译，提示加载了“gitbook-plugin-disqus”插件
 ```
-$ sudo gitbook build ./
+$ sudo gitbook build ./ 1.0.0
 info: loading book configuration....
 warn: you should specify a gitbook version to use in your book.json, for example: 2.x.x 
 info: OK 
