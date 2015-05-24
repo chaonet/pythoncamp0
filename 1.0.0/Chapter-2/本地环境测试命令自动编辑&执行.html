@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="3.5" data-basepath=".." data-revision="Sun May 24 2015 23:02:17 GMT+0800 (CST)">
+    <div class="book" data-level="3.5" data-basepath=".." data-revision="Sun May 24 2015 23:34:33 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -515,77 +515,73 @@
 </ul>
 <h4 id="%E6%AD%A5%E9%AA%A4">&#x6B65;&#x9AA4;</h4>
 <ul>
-<li>&#x5728;&#x5E94;&#x7528;&#x76EE;&#x5F55;&#x4E2D;&#x65B0;&#x5EFA;&#x5C06;&#x8981;&#x8C03;&#x7528;&#x7684;&#x811A;&#x672C; cli.py &#xFF0C;&#x4EE3;&#x7801;&#xFF1A;
-```<h1 id="-coding-utf-8">-<em>- coding: utf-8 -</em>-</h1>
+<li>&#x5728;&#x5E94;&#x7528;&#x76EE;&#x5F55;&#x4E2D;&#x65B0;&#x5EFA;&#x5C06;&#x8981;&#x8C03;&#x7528;&#x7684;&#x811A;&#x672C; cli.py &#xFF0C;&#x4EE3;&#x7801;&#xFF1A;</li>
+</ul>
+<pre><code>\# -*- coding: utf-8 -*-
 import sys
 import time
 from subprocess import Popen
-from xsettings import XCFG</li>
-</ul>
-<p>if <strong>name</strong> == &quot;<strong>main</strong>&quot;:
+from xsettings import XCFG
+
+if __name__ == &quot;__main__&quot;:
     if 2 != len(sys.argv):
         print &quot;&quot;&quot; Usage::
         $ python CLI.py [&#x6307;&#x4EE4;]
         &quot;&quot;&quot;
     else:
-        TPL_TEXT=&apos;&apos;&apos;<xml>
-        <ToUserName>&lt;![CDATA[%(toUser)s]]&gt;</ToUserName>
-        <FromUserName>&lt;![CDATA[%(fromUser)s]]&gt;</FromUserName>
-        <CreateTime>%(tStamp)s</CreateTime>
-        <MsgType>&lt;![CDATA[text]]&gt;</MsgType>
-        <Content>&lt;![CDATA[%(content)s]]&gt;</Content>
-        </xml>&apos;&apos;&apos;</p>
-<pre><code>    toUser = XCFG.AS_SRV
-    fromUser = XCFG.AS_USR
+        TPL_TEXT=&apos;&apos;&apos;&lt;xml&gt;
+        &lt;ToUserName&gt;&lt;![CDATA[%(toUser)s]]&gt;&lt;/ToUserName&gt;
+        &lt;FromUserName&gt;&lt;![CDATA[%(fromUser)s]]&gt;&lt;/FromUserName&gt;
+        &lt;CreateTime&gt;%(tStamp)s&lt;/CreateTime&gt;
+        &lt;MsgType&gt;&lt;![CDATA[text]]&gt;&lt;/MsgType&gt;
+        &lt;Content&gt;&lt;![CDATA[%(content)s]]&gt;&lt;/Content&gt;
+        &lt;/xml&gt;&apos;&apos;&apos;
 
-    tStamp = time.time()
-    content = sys.argv[1]
-    xml = TPL_TEXT % locals()
+        toUser = XCFG.AS_SRV
+        fromUser = XCFG.AS_USR
 
-    cmd = &quot;curl -d &apos;%s&apos; http://localhost:8080/api/echo/ &quot;% xml         #&#x5B8C;&#x6210;&#x6D4B;&#x8BD5;&#x547D;&#x4EE4;&#x7F16;&#x8F91;
-    print cmd
-    Popen(cmd, shell=True, close_fds=True)                                        #&#x6267;&#x884C;
-</code></pre><pre><code>
-- &#x65B0;&#x5EFA;`xsettings.py`&#xFF0C;&#x5B58;&#x653E;&#x5176;&#x4ED6;&#x9700;&#x8981;&#x66FF;&#x6362;&#x7684; &#x5B57;&#x6BB5;
-</code></pre><h1 id="-coding-utf-8">-<em>- coding: utf-8 -</em>-</h1>
-<p>&apos;&apos;&apos;&#x672C;&#x5730;&#x6D4B;&#x8BD5;&#x7528;&#x673A;&#x5BC6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</p>
-<ul>
-<li>&#x4FEE;&#x8BA2;&#x76F8;&#x5173;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x4E3A;&#x4F60;&#x7684;</li>
-<li><p>&#x5C06;&#x6587;&#x4EF6;&#x540D;&#x4E5F;&#x4FEE;&#x8BA2;&#x4E3A; xsettings.py &#x5373;&#x53EF;&#x8D77;&#x4F5C;&#x7528;
-&apos;&apos;&apos;
-class Borg():
-  &apos;&apos;&apos;base <a href="http://blog.youxu.info/2010/04/29/borg" target="_blank">http://blog.youxu.info/2010/04/29/borg</a></p>
-<pre><code>  - &#x5355;&#x4F8B;&#x5F0F;&#x914D;&#x7F6E;&#x6536;&#x96C6;&#x7C7B;
-</code></pre><p>  &apos;&apos;&apos;
-  <strong>collective_mind = {}
-  def </strong>init__(self):</p>
-<pre><code>  self.__dict__ = self.__collective_mind
-</code></pre><p>  TO_SAE = &quot;<a href="http://bookgiver.sinaapp.com/api/echo/" target="_blank">http://bookgiver.sinaapp.com/api/echo/</a>&quot;</p>
-<h1 id="all-kinds-of-security-abt-set">all kinds of security abt. set</h1>
-<p>  TOKEN =  &quot;Test&quot;
-  APPKEY = &quot;&#x5FAE;&#x4FE1;&#x5E94;&#x7528;&#x4E13;&#x5319;&quot;
-  SECRET = &quot;&#x5FAE;&#x4FE1;&#x5E94;&#x7528;&#x5B89;&#x5168;&#x7801;&quot;</p>
-<p>  WX_GDG = &apos;gh_9ea32bddfe6b&apos;
-  AS_SRV = WX_GDG
-  AS_USR = &quot;ovcFVtwLC-7dEArda7gzgfgOPaH0&quot;</p>
-</li>
+        tStamp = time.time()
+        content = sys.argv[1]
+        xml = TPL_TEXT % locals()
+
+        cmd = &quot;curl -d &apos;%s&apos; http://localhost:8080/api/echo/ &quot;% xml         #&#x5B8C;&#x6210;&#x6D4B;&#x8BD5;&#x547D;&#x4EE4;&#x7F16;&#x8F91;
+        print cmd
+        Popen(cmd, shell=True, close_fds=True)                                        #&#x6267;&#x884C;
+</code></pre><ul>
+<li>&#x65B0;&#x5EFA;<code>xsettings.py</code>&#xFF0C;&#x5B58;&#x653E;&#x5176;&#x4ED6;&#x9700;&#x8981;&#x66FF;&#x6362;&#x7684; &#x5B57;&#x6BB5;</li>
 </ul>
-<p>XCFG = Borg()</p>
-<pre><code>
-- &#x5982;&#x679C;&#x6709;&#x4E9B;&#x6587;&#x4EF6;&#x4E0D;&#x5E0C;&#x671B;&#x88AB; push &#x5230; github &#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x76EE;&#x5F55;&#x65B0;&#x5EFA;&#x9690;&#x85CF;&#x6587;&#x4EF6; `.gitignore`&#xFF0C;&#x586B;&#x5199;&#x4E0D;&#x613F;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x79F0;
-</code></pre><p><em>.pyc
-</em>.db
-<em>.log
-</em>.wsgic
-xsettings.py</p>
-<pre><code>
-#### &#x4F7F;&#x7528;
-</code></pre><p>$ python cli.py     #&#x67E5;&#x770B;&#x811A;&#x672C;&#x7684;&#x4F7F;&#x7528;
+<pre><code>\# -*- coding: utf-8 -*-
+class Borg():
+    __collective_mind = {}
+    def __init__(self):
+        self.__dict__ = self.__collective_mind
+
+    TO_SAE = &quot;http://bookgiver.sinaapp.com/api/echo/&quot;
+    # all kinds of security abt. set
+    TOKEN =  &quot;Test&quot;
+    APPKEY = &quot;&#x5FAE;&#x4FE1;&#x5E94;&#x7528;&#x4E13;&#x5319;&quot;
+    SECRET = &quot;&#x5FAE;&#x4FE1;&#x5E94;&#x7528;&#x5B89;&#x5168;&#x7801;&quot;
+
+    WX_GDG = &apos;gh_9ea32bddfe6b&apos;
+    AS_SRV = WX_GDG
+    AS_USR = &quot;ovcFVtwLC-7dEArda7gzgfgOPaH0&quot;
+
+XCFG = Borg()
+</code></pre><ul>
+<li>&#x5982;&#x679C;&#x6709;&#x4E9B;&#x6587;&#x4EF6;&#x4E0D;&#x5E0C;&#x671B;&#x88AB; push &#x5230; github &#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x76EE;&#x5F55;&#x65B0;&#x5EFA;&#x9690;&#x85CF;&#x6587;&#x4EF6; <code>.gitignore</code>&#xFF0C;&#x586B;&#x5199;&#x4E0D;&#x613F;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x79F0;</li>
+</ul>
+<pre><code>*.pyc
+*.db
+*.log
+*.wsgic
+xsettings.py
+</code></pre><h4 id="%E4%BD%BF%E7%94%A8">&#x4F7F;&#x7528;</h4>
+<pre><code>$ python cli.py     #&#x67E5;&#x770B;&#x811A;&#x672C;&#x7684;&#x4F7F;&#x7528;
  Usage::
-        $ python CLI.py [&#x6307;&#x4EE4;]</p>
-<p>$ python cli.py hi   #&#x6A21;&#x62DF;&#x7528;&#x6237;&#x5411;&#x672C;&#x5730; SAE &#x540E;&#x53F0;&#x53D1;&#x9001;<code>hi</code>
-```</p>
-<h4 id="%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">&#x53C2;&#x8003;&#x8D44;&#x6599;</h4>
+        $ python CLI.py [&#x6307;&#x4EE4;]
+
+$ python cli.py hi   #&#x6A21;&#x62DF;&#x7528;&#x6237;&#x5411;&#x672C;&#x5730; SAE &#x540E;&#x53F0;&#x53D1;&#x9001;`hi`
+</code></pre><h4 id="%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">&#x53C2;&#x8003;&#x8D44;&#x6599;</h4>
 <ul>
 <li>(42&#x5206;&#x949F;&#x4E71;&#x5165; wechat &#x624B;&#x518C;)[<a href="https://chaos2wechat.readthedocs.org/en/latest/ch03/try.html" target="_blank">https://chaos2wechat.readthedocs.org/en/latest/ch03/try.html</a>]</li>
 <li>(&#x4EE3;&#x7801;&#x4ED3;&#x5E93;)[<a href="https://gitcafe.com/hainuo/wechat/blob/master/xsettings.py" target="_blank">https://gitcafe.com/hainuo/wechat/blob/master/xsettings.py</a>]</li>
